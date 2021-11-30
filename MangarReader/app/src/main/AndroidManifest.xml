@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dinhtrongdat.mangareaderapp">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MangaReaderApp">
-        <activity android:name=".viewmodel.RegisterAct"></activity>
+        <activity android:name=".viewmodel.GoogleLoginAct"></activity>
+        <activity android:name=".viewmodel.RegisterAct" />
         <activity android:name=".viewmodel.MangaAct" />
         <activity android:name=".viewmodel.LoginAct" />
         <activity android:name=".SplashScreen">

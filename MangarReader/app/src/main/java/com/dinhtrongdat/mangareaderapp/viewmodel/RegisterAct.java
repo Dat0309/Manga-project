@@ -36,7 +36,7 @@ public class RegisterAct extends AppCompatActivity implements View.OnClickListen
     ImageView imgLogo;
     TextInputLayout edtUser, edtPass;
     Button btnSignup;
-    ImageButton btnFacebook, btnGoogle, btnBack;
+    ImageButton btnBack;
     ProgressBar progressBar;
     LinearLayout linear;
     TextView txtDes;
@@ -57,8 +57,6 @@ public class RegisterAct extends AppCompatActivity implements View.OnClickListen
         btnSignup = findViewById(R.id.btn_register);
         progressBar = findViewById(R.id.progres);
         linear = findViewById(R.id.linear_btn);
-        btnFacebook = findViewById(R.id.btn_facebook);
-        btnGoogle = findViewById(R.id.btn_google);
         txtDes = findViewById(R.id.txt_regis_des);
         btnBack = findViewById(R.id.btn_back);
 
@@ -70,8 +68,6 @@ public class RegisterAct extends AppCompatActivity implements View.OnClickListen
         Animation leftAnim = AnimationUtils.loadAnimation(this, R.anim.left_anim);
 
         linear.setAnimation(topAnim);
-        btnGoogle.setAnimation(topAnim);
-        btnFacebook.setAnimation(topAnim);
         btnBack.setAnimation(leftAnim);
 
         btnBack.setOnClickListener(this);

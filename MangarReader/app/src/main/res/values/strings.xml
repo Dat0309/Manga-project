@@ -10,4 +10,5 @@
     <string name="or">Hoặc</string>
     <string name="signup">Đăng ký</string>
     <string name="register">Đăng ký tài khoản miễn phí</string>
+    <string name="gg_signin">Sign In</string>
 </resources>

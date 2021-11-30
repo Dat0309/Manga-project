@@ -80,12 +80,13 @@ public class LoginAct extends AppCompatActivity implements View.OnClickListener 
 
         btnSignin.setOnClickListener(this);
         btnSignup.setOnClickListener(this);
+        btnGoogle.setOnClickListener(this);
     }
 
     /**
      * Hàm kiểm tra đăng nhập với google
      */
-    private void SigninGoogle() {
+    private void SigninGmail() {
         if (!ValidationUser() | !ValidationPass()) return;
         HideKeyboard(LoginAct.this);
         progressBar.setVisibility(View.VISIBLE);
@@ -188,14 +189,30 @@ public class LoginAct extends AppCompatActivity implements View.OnClickListener 
         finish();
     }
 
+    /**
+     * Hàm chuyển màn hình đăng ký
+     */
+    private void SignInWithGoogle() {
+        Pair[] pair = new Pair[1];
+        pair[0] = new Pair<View, String>(imgLogo, "logo_trans");
+
+        Intent intent = new Intent(LoginAct.this, GoogleLoginAct.class);
+        ActivityOptions option = ActivityOptions.makeSceneTransitionAnimation(LoginAct.this, pair);
+        startActivity(intent, option.toBundle());
+        finish();
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_signin:
-                SigninGoogle();
+                SigninGmail();
                 break;
             case R.id.btn_signup:
                 RegisterUser();
+                break;
+            case R.id.btn_google:
+                SignInWithGoogle();
                 break;
         }
     }
