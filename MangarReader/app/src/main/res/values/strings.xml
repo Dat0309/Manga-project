@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">Manga Reader App</string>
     <string name="description">Đề tài kết thúc học phần lập trình Mobile Nhóm 1</string>
+    <string name="welcome">Welcome</string>
+    <string name="signin">Đăng nhập để tiếp tục</string>
+    <string name="user">Gmail</string>
+    <string name="pass">Mật khẩu</string>
+    <string name="forgotpass">Quên mật khẩu?</string>
+    <string name="login">Đăng nhập</string>
+    <string name="or">Hoặc</string>
+    <string name="signup">Đăng ký</string>
+    <string name="register">Đăng ký tài khoản miễn phí</string>
 </resources>

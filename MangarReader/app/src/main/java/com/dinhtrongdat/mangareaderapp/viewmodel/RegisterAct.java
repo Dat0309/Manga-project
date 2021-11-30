@@ -4,10 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
-import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Pair;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -29,90 +27,77 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
-public class LoginAct extends AppCompatActivity implements View.OnClickListener {
+public class RegisterAct extends AppCompatActivity implements View.OnClickListener {
 
     /**
      * Defind project variable
      */
     ImageView imgLogo;
     TextInputLayout edtUser, edtPass;
-    Button btnSignin, btnSignup;
-    ImageButton btnFacebook, btnGoogle;
+    Button btnSignup;
+    ImageButton btnFacebook, btnGoogle, btnBack;
     ProgressBar progressBar;
     LinearLayout linear;
-    TextView txtDes, txtTitle;
+    TextView txtDes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_register);
 
         initUI();
     }
 
-    /**
-     * Hàm định nghĩa các thao tác với giao diện
-     */
     private void initUI() {
         imgLogo = findViewById(R.id.img_logo);
         edtUser = findViewById(R.id.username);
         edtPass = findViewById(R.id.password);
-        btnSignin = findViewById(R.id.btn_signin);
-        btnSignup = findViewById(R.id.btn_signup);
+        btnSignup = findViewById(R.id.btn_register);
         progressBar = findViewById(R.id.progres);
         linear = findViewById(R.id.linear_btn);
         btnFacebook = findViewById(R.id.btn_facebook);
         btnGoogle = findViewById(R.id.btn_google);
-        txtDes = findViewById(R.id.txt_des);
-        txtTitle = findViewById(R.id.txt_title);
+        txtDes = findViewById(R.id.txt_regis_des);
+        btnBack = findViewById(R.id.btn_back);
 
         Sprite wave = new Wave();
         progressBar.setIndeterminateDrawable(wave);
 
         // Set animation to component
         Animation topAnim = AnimationUtils.loadAnimation(this, R.anim.top_anim);
+        Animation leftAnim = AnimationUtils.loadAnimation(this, R.anim.left_anim);
+
         linear.setAnimation(topAnim);
         btnGoogle.setAnimation(topAnim);
         btnFacebook.setAnimation(topAnim);
+        btnBack.setAnimation(leftAnim);
 
-        btnSignin.setOnClickListener(this);
+        btnBack.setOnClickListener(this);
         btnSignup.setOnClickListener(this);
     }
 
-    /**
-     * Hàm kiểm tra đăng nhập với google
-     */
-    private void SigninGoogle() {
+    private void RegisterWithEmail(){
         if (!ValidationUser() | !ValidationPass()) return;
-        HideKeyboard(LoginAct.this);
+        HideKeyboard(RegisterAct.this);
         progressBar.setVisibility(View.VISIBLE);
 
         String strEmail = edtUser.getEditText().getText().toString().trim();
         String strPass = edtPass.getEditText().getText().toString().trim();
 
         FirebaseAuth auth = FirebaseAuth.getInstance();
-        auth.signInWithEmailAndPassword(strEmail, strPass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+        auth.createUserWithEmailAndPassword(strEmail, strPass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    Pair[] pair = new Pair[3];
-                    pair[0] = new Pair<View, String>(imgLogo, "logo_trans");
-                    pair[1] = new Pair<View, String>(txtDes, "text_trans");
-                    pair[2] = new Pair<View, String>(txtTitle, "text_trans");
+                if(task.isSuccessful()){
+                    Toast.makeText(RegisterAct.this, "Success", Toast.LENGTH_SHORT).show();
 
-                    Toast.makeText(LoginAct.this, "Login Success", Toast.LENGTH_SHORT).show();
-                    FirebaseUser user = auth.getCurrentUser();
-
-                    Intent intent = new Intent(LoginAct.this, MangaAct.class);
-                    ActivityOptions option = ActivityOptions.makeSceneTransitionAnimation(LoginAct.this, pair);
-                    startActivity(intent, option.toBundle());
-                    finishAffinity();
+                    Intent intent = new Intent(RegisterAct.this, LoginAct.class);
+                    startActivity(intent);
                     progressBar.setVisibility(View.GONE);
-                } else {
-                    Toast.makeText(LoginAct.this, "Fail", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(RegisterAct.this, "Fail", Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
                 }
             }
@@ -174,28 +159,15 @@ public class LoginAct extends AppCompatActivity implements View.OnClickListener 
         inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
-    /**
-     * Hàm chuyển màn hình đăng ký
-     */
-    private void RegisterUser() {
-        Pair[] pair = new Pair[2];
-        pair[0] = new Pair<View, String>(imgLogo, "logo_trans");
-        pair[1] = new Pair<View, String>(txtDes, "text_trans");
-
-        Intent intent = new Intent(LoginAct.this, RegisterAct.class);
-        ActivityOptions option = ActivityOptions.makeSceneTransitionAnimation(LoginAct.this, pair);
-        startActivity(intent, option.toBundle());
-        finish();
-    }
-
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btn_signin:
-                SigninGoogle();
+        switch (v.getId()){
+            case R.id.btn_back:
+                Intent intent = new Intent(RegisterAct.this, LoginAct.class);
+                startActivity(intent);
                 break;
-            case R.id.btn_signup:
-                RegisterUser();
+            case R.id.btn_register:
+                RegisterWithEmail();
                 break;
         }
     }
