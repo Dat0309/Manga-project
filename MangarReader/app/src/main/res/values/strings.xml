@@ -11,4 +11,11 @@
     <string name="signup">Đăng ký</string>
     <string name="register">Đăng ký tài khoản miễn phí</string>
     <string name="gg_signin">Sign In</string>
+    <string name="nav_home">Trang chủ</string>
+    <string name="nav_fav">Ưa thích</string>
+    <string name="nav_type">Thể loại</string>
+    <string name="nav_chancePass">Đổi mật khẩu</string>
+    <string name="nav_logout">Đăng xuất</string>
+    <string name="nav_profile">Thông tin cá nhân</string>
+    <string name="nav_account">Tài khoản</string>
 </resources>

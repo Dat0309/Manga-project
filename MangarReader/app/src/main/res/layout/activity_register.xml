@@ -19,7 +19,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginTop="180dp">
 
         <ImageView
             android:id="@+id/img_logo"
@@ -29,17 +30,6 @@
             android:transitionName="logo_trans"
             android:layout_gravity="center"
             android:contentDescription="@string/app_name"/>
-        <TextView
-            android:id="@+id/txt_regis_des"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat"
-            android:text="@string/register"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            android:gravity="center"
-            android:layout_marginTop="100dp"
-            android:transitionName="text_trans"/>
 
         <LinearLayout
             android:id="@+id/linear_btn"

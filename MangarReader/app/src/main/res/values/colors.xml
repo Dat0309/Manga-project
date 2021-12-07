@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="toolbar">#D52C1F</color>
+    <color name="background">#D1D1D1</color>
+    <color name="scrim">#FBFBFB</color>
+    <color name="background_banner">#656565</color>
 </resources>

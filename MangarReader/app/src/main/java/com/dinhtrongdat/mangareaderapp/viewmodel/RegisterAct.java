@@ -39,7 +39,6 @@ public class RegisterAct extends AppCompatActivity implements View.OnClickListen
     ImageButton btnBack;
     ProgressBar progressBar;
     LinearLayout linear;
-    TextView txtDes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +56,6 @@ public class RegisterAct extends AppCompatActivity implements View.OnClickListen
         btnSignup = findViewById(R.id.btn_register);
         progressBar = findViewById(R.id.progres);
         linear = findViewById(R.id.linear_btn);
-        txtDes = findViewById(R.id.txt_regis_des);
         btnBack = findViewById(R.id.btn_back);
 
         Sprite wave = new Wave();

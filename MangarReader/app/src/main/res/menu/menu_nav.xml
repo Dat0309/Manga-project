@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/icons8_home_24px"
+            android:title="@string/nav_home" />
+
+        <item
+            android:id="@+id/nav_fav"
+            android:icon="@drawable/icons8_favorite_24px"
+            android:title="@string/nav_fav" />
+
+        <item
+            android:id="@+id/nav_type"
+            android:icon="@drawable/icons8_grid_2_24px"
+            android:title="@string/nav_type" />
+
+    </group>
+
+    <item android:title="@string/nav_account">
+        <menu>
+
+            <item
+                android:id="@+id/nav_profile"
+                android:icon="@drawable/icons8_user_24px"
+                android:title="@string/nav_profile" />
+
+            <item
+                android:id="@+id/nav_pass"
+                android:icon="@drawable/icons8_lock_24px"
+                android:title="@string/nav_chancePass" />
+
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/icons8_logout_24px"
+                android:title="@string/nav_logout" />
+
+        </menu>
+    </item>
+</menu>

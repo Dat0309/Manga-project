@@ -1,132 +1,126 @@
 {
   "Banners": [
     {
-      "Category": "Manga/Action",
+      "Category": "Action/Adventure/Comedy/Shounen/Supernatural",
       "Chapters": [
         {
           "Links": [
-            "http://truyenvua.xyz/380/329/3.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/380/329/8.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/380/329/11.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/380/329/18.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/380/329/22.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/380/329/25.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/380/329/30.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/380/329/34.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/380/329/38.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/380/329/43.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/380/329/47.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/380/329/52.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/380/329/57.jpg?gf=hdfgdfg"
+            "https://i.imgur.com/NrqFBAk.jpeg",
+            "https://i.imgur.com/uRaHSCv.jpeg",
+            "https://i.imgur.com/gOOttYV.jpeg",
+            "https://i.imgur.com/UnmaWA0.jpeg",
+            "https://i.imgur.com/yekx0u5.jpeg",
+            "https://i.imgur.com/37yJoIg.jpeg",
+            "https://i.imgur.com/WcOMSgg.jpeg",
+            "https://i.imgur.com/0AY2k6h.jpeg",
+            "https://i.imgur.com/5CWEVU2.jpeg",
+            "https://i.imgur.com/aG4jWBm.jpeg"
+          ],
+          "Name": "Chương 1"
+        }
+      ],
+      "Image": "http://i.truyenqqtop.com/slider/290x191/slider_1560573084.jpg",
+      "Description": "Vào tương lai, lúc mà con người với những sức mạnh siêu nhiên là điều thường thấy quanh thế giới. Đây là câu chuyện về Izuku Midoriya, từ một kẻ bất tài trở thành một siêu anh hùng. Tất cả ta cần là mơ ước.",
+      "Name": "Bokuno Hero"
+    },
+    {
+      "Category": "Action/Shounen/Mystery/Horror/Historical/Tragedy",
+      "Chapters": [
+        {
+          "Links": [
+            "https://up.mangadudes.com/shingeki-no-kyojin/133/shingeki-no-kyojin-15558757-d993cf5ce22e5b5db101350ba8d1341b.jpg",
+            "https://up.mangadudes.com/shingeki-no-kyojin/133/shingeki-no-kyojin-15558763-12c44df298c9ea72a4980735315afc41.jpg",
+            "https://up.mangadudes.com/shingeki-no-kyojin/133/shingeki-no-kyojin-15558769-b3bf47dc49885de8def3500fb696dcfc.jpg",
+            "https://up.mangadudes.com/shingeki-no-kyojin/133/shingeki-no-kyojin-15558775-0c500b5dc84cd2a070ee1497c4aa5cc0.jpg",
+            "https://up.mangadudes.com/shingeki-no-kyojin/133/shingeki-no-kyojin-15558787-3b892db0546ba168ed9fdfd797596746.jpg",
+            "https://up.mangadudes.com/shingeki-no-kyojin/133/shingeki-no-kyojin-15558793-211fbe28c87257ca7dc4389cdc8cb71b.jpg",
+            "https://up.mangadudes.com/shingeki-no-kyojin/133/shingeki-no-kyojin-15558799-361ae90d7477555e786d495fb30c115e.jpg",
+            "https://up.mangadudes.com/shingeki-no-kyojin/133/shingeki-no-kyojin-15558805-a0c1030bd7043dcddc415abd256b2840.jpg",
+            "https://up.mangadudes.com/shingeki-no-kyojin/133/shingeki-no-kyojin-15558811-224860d36273eee5e82f46ef0c7773fa.jpg",
+            "https://up.mangadudes.com/shingeki-no-kyojin/133/shingeki-no-kyojin-15558823-3252181cafde0c4bdd3fbd569bb91898.jpg",
+            "https://up.mangadudes.com/shingeki-no-kyojin/133/shingeki-no-kyojin-15558829-247e6b9a24321dd23a64ae9bdb178801.jpg",
+            "https://up.mangadudes.com/shingeki-no-kyojin/133/shingeki-no-kyojin-15558835-adcfd1c5d6c3f2d76039cca3b7f92ac6.jpg",
+            "https://up.mangadudes.com/shingeki-no-kyojin/133/shingeki-no-kyojin-15558841-474228fe8b7d377e7cf5787604c4a489.jpg",
+            "https://up.mangadudes.com/shingeki-no-kyojin/133/shingeki-no-kyojin-15558847-3525a30814889089dddf5b099271b965.jpg",
+            "https://up.mangadudes.com/shingeki-no-kyojin/133/shingeki-no-kyojin-15558859-40b779acd1ea05aae391e2c31f53651a.jpg",
+            "https://up.mangadudes.com/shingeki-no-kyojin/133/shingeki-no-kyojin-15558871-9a57846e46fc37aa8807dab6d0e5018f.jpg",
+            "https://up.mangadudes.com/shingeki-no-kyojin/133/shingeki-no-kyojin-15558883-0b1806580b6d4ed8f7617de590005341.jpg",
+            "https://up.mangadudes.com/shingeki-no-kyojin/133/shingeki-no-kyojin-15558895-7ab451a056eac4040b50a375c8d5653e.jpg",
+            "https://up.mangadudes.com/shingeki-no-kyojin/133/shingeki-no-kyojin-15558907-3c20cb0ef27e8182f43578fdc23e1a48.jpg",
+            "https://up.mangadudes.com/shingeki-no-kyojin/133/shingeki-no-kyojin-15558919-40aacad80a548065b1922cad9dc76436.jpg",
+            "https://up.mangadudes.com/shingeki-no-kyojin/133/shingeki-no-kyojin-15558937-aebff83d37b1866cf27e7f35b0368bdf.jpg"
           ],
           "Name": "Chapter 1"
         }
       ],
-      "Image": "http://i.truyenqqtop.com/slider/290x191/slider_1560573084.jpg",
-      "Name": "Bokuno Hero"
-    },
-    {
-      "Category": "Manga/Action",
-      "Chapters": [
-        {
-          "Links": [
-            "http://truyenvua.xyz/462/141/0.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/462/141/1.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/462/141/2.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/462/141/3.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/462/141/5.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/462/141/6.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/462/141/7.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/462/141/8.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/462/141/9.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/462/141/10.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/462/141/11.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/462/141/12.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/462/141/13.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/462/141/15.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/462/141/20.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/462/141/21.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/462/141/23.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/462/141/27.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/462/141/32.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/462/141/35.jpg?gf=hdfgdfg", 
-            "http://truyenvua.xyz/462/141/37.jpg?gf=hdfgdfg" ],
-          "Name": "Chapter 1"
-        }
-      ],
       "Image": "http://i.truyenqqtop.com/slider/290x191/slider_1559213484.jpg",
+      "Description": "Hơn 100 năm trước, giống người khổng lồ Titan đã tấn công và đẩy loài người tới bờ vực tuyệt chủng. Những con người sống sót tụ tập lại, xây bao quanh mình 1 tòa thành 3 lớp kiên cố và tự nhốt mình bên trong để trốn tránh những cuộc tấn công của người khổng lồ. Họ tìm mọi cách để tiêu diệt người khổng lồ nhưng không thành công. Và sau 1 thế kỉ hòa bình, giống khổng lồ đã xuất hiện trở lại, một lần nữa đe dọa sự tồn vong của con người....  Elen và Mikasa phải chứng kiến một cảnh tượng cực kinh khủng - mẹ của mình bị ăn thịt ngay trước mắt. Elen thề rằng cậu sẽ giết tất cả những tên khổng lồ mà cậu gặp.....",
       "Name": "Attack of Tittan"
     },
     {
-      "Category": "Manga/Action",
+      "Category": "Adventure/Fantasy/Supernatural",
       "Chapters": [
         {
           "Links": [
-            
-            "http://truyenvua.xyz/5212/92/0.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/5212/92/2.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/5212/92/3.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/5212/92/4.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/5212/92/5.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/5212/92/6.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/5212/92/7.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/5212/92/8.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/5212/92/9.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/5212/92/11.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/5212/92/12.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/5212/92/14.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/5212/92/15.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/5212/92/16.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/5212/92/17.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/5212/92/19.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/5212/92/20.jpg?gf=hdfgdfg"
+
+            "https://sorcererweekly.com/reader/content/comics/ft100yq_5ef8b4229cfb4/96-0-lightning-and-atmosphere_61a6eb09e09b1/00.png",
+            "https://sorcererweekly.com/reader/content/comics/ft100yq_5ef8b4229cfb4/96-0-lightning-and-atmosphere_61a6eb09e09b1/01.png",
+            "https://sorcererweekly.com/reader/content/comics/ft100yq_5ef8b4229cfb4/96-0-lightning-and-atmosphere_61a6eb09e09b1/02.png",
+            "https://sorcererweekly.com/reader/content/comics/ft100yq_5ef8b4229cfb4/96-0-lightning-and-atmosphere_61a6eb09e09b1/03.png",
+            "https://sorcererweekly.com/reader/content/comics/ft100yq_5ef8b4229cfb4/96-0-lightning-and-atmosphere_61a6eb09e09b1/04.png",
+            "https://sorcererweekly.com/reader/content/comics/ft100yq_5ef8b4229cfb4/96-0-lightning-and-atmosphere_61a6eb09e09b1/05.png",
+            "https://sorcererweekly.com/reader/content/comics/ft100yq_5ef8b4229cfb4/96-0-lightning-and-atmosphere_61a6eb09e09b1/06.png",
+            "https://sorcererweekly.com/reader/content/comics/ft100yq_5ef8b4229cfb4/96-0-lightning-and-atmosphere_61a6eb09e09b1/07.png",
+            "https://sorcererweekly.com/reader/content/comics/ft100yq_5ef8b4229cfb4/96-0-lightning-and-atmosphere_61a6eb09e09b1/08.png",
+            "https://sorcererweekly.com/reader/content/comics/ft100yq_5ef8b4229cfb4/96-0-lightning-and-atmosphere_61a6eb09e09b1/09.png",
+            "https://sorcererweekly.com/reader/content/comics/ft100yq_5ef8b4229cfb4/96-0-lightning-and-atmosphere_61a6eb09e09b1/10.png",
+            "https://sorcererweekly.com/reader/content/comics/ft100yq_5ef8b4229cfb4/96-0-lightning-and-atmosphere_61a6eb09e09b1/11.png",
+            "https://sorcererweekly.com/reader/content/comics/ft100yq_5ef8b4229cfb4/96-0-lightning-and-atmosphere_61a6eb09e09b1/12.png",
+            "https://sorcererweekly.com/reader/content/comics/ft100yq_5ef8b4229cfb4/96-0-lightning-and-atmosphere_61a6eb09e09b1/13.png",
+            "https://sorcererweekly.com/reader/content/comics/ft100yq_5ef8b4229cfb4/96-0-lightning-and-atmosphere_61a6eb09e09b1/14.png",
+            "https://sorcererweekly.com/reader/content/comics/ft100yq_5ef8b4229cfb4/96-0-lightning-and-atmosphere_61a6eb09e09b1/15.png",
+            "https://sorcererweekly.com/reader/content/comics/ft100yq_5ef8b4229cfb4/96-0-lightning-and-atmosphere_61a6eb09e09b1/16.png"
           ],
           "Name": "Chapter 1"
         }
       ],
       "Image": "http://i.truyenqqtop.com/slider/290x191/slider_1561609693.jpg",
+      "Description": "Xin đón chào các bạn đến với Fairy Tail – một thế giới tràn đầy phép thuật, những pháp sư có thể hô mưa, gọi gió, những con mèo biết bay và những quái vật trong truyền thuyết. Tại vùng đất Fiore, bạn sẽ gặp được tổ chức Fairy Tail, một tổ chức pháp sư có những thành viên vui tính, thú vị và mạnh mẽ nhất. Câu chuyện bắt đầu khi cô gái trẻ Lucy, người có khả năng kêu gọi các tinh linh và ước mơ được gia nhập một tổ chức phù thủy gặp được hỏa pháp sư Natsu đang trên đường tìm kiếm cha nuôi của mình tại thị trấn cảng Harujion… Trong Fairy Tail, bạn sẽ gặp gỡ cặp “chó mèo” Natsu “khạc ra lửa” và “xơi lửa” cùng Gray “băng giá”, Lucy, Erza tài giỏi và “sexy”, theo kèm là những chú mèo ngộ nghĩnh cùng rất nhiều các pháp sư với đủ loại phép thuật kỳ lạ.",
       "Name": "Fairytail"
     },
     {
-      "Category": "Manga/Action",
+      "Category": "Drama/Fantasy/Shounen/Romance/Historical",
       "Chapters": [
         {
           "Links": [
-            
-            "http://qqtaku.com/2624/fix-205/0.jpg?i=i7864634",
-            "http://qqtaku.com/2624/fix-205/2.jpg?i=i7864634",
-            "http://qqtaku.com/2624/fix-205/4.jpg?i=i7864634",
-            "http://qqtaku.com/2624/fix-205/6.jpg?i=i7864634",
-            "http://qqtaku.com/2624/fix-205/7.jpg?i=i7864634",
-            "http://qqtaku.com/2624/fix-205/8.jpg?i=i7864634",
-            "http://qqtaku.com/2624/fix-205/9.jpg?i=i7864634",
-            "http://qqtaku.com/2624/fix-205/10.jpg?i=i7864634",
-            "http://qqtaku.com/2624/fix-205/11.jpg?i=i7864634",
-            "http://qqtaku.com/2624/fix-205/12.jpg?i=i7864634",
-            "http://qqtaku.com/2624/fix-205/13.jpg?i=i7864634",
-            "http://qqtaku.com/2624/fix-205/14.jpg?i=i7864634",
-            "http://qqtaku.com/2624/fix-205/15.jpg?i=i7864634",
-            "http://qqtaku.com/2624/fix-205/16.jpg?i=i7864634",
-            "http://qqtaku.com/2624/fix-205/17.jpg?i=i7864634",
-            "http://qqtaku.com/2624/fix-205/18.jpg?i=i7864634",
-            "http://qqtaku.com/2624/fix-205/19.jpg?i=i7864634",
-            "http://qqtaku.com/2624/fix-205/21.jpg?i=i7864634",
-            "http://qqtaku.com/2624/fix-205/22.jpg?i=i7864634",
-            "http://qqtaku.com/2624/fix-205/23.jpg?i=i7864634",
-            "http://qqtaku.com/2624/fix-205/24.jpg?i=i7864634",
-            "http://qqtaku.com/2624/fix-205/27.jpg?i=i7864634"
+
+            "https://blogger.googleusercontent.com/img/a/AVvXsEhQ9DzGVdQe5DdySmdgZ7N5I3kbCdeNkj8epYB3Z_XXmfUAVzq5uRcZKc6CUvsC-lSp_8-L8GOuyVS3oirB6edlMH4l4QxW_0cZr6AxN13P45oAkwlOXxLspJJq-MMzNxJ_JTBPHHcwEXbmW0HB05NLAnrzIg5_ni7CwIUR2xJzM_kIHyDSd5oYNo26Ng",
+            "https://blogger.googleusercontent.com/img/a/AVvXsEhh-NEgnbkNvCNYyC2CmX1oIKsEL_2q8ZiEp6hJID09UOQG6DdGKBZbB7YVaRR_wj_IAfdih56sutlluaReIs7uaO5bJ0yA_OmvVbjBg-lEUoqOQ-YV-pgSjrNkzVRJmHO7TzKSZ0q6OHKWi_ptAf4r4MGKZ_Uerf9xpF0DZFHhwU9GfNaeCRxI6GXAAg",
+            "https://blogger.googleusercontent.com/img/a/AVvXsEjNxcns5uIZxb9QGKeuo9jEl0sz3U_pqn7gBoN-_kr-JccisaO6kjzJBHxe2mw2oFQCdJi70Xg2AojtRsYhyZetH28eqRsbzDkSzpHFOvOfDunIB8qV-HEXEEg1KKHFY1f2JhaRj96rHUoZxgl9Cl8XYcJEmETazF2G81L7Li8XxJXBeEd_lBUtqJSbvA",
+            "https://blogger.googleusercontent.com/img/a/AVvXsEjnqVLU9hZUuZfhwWRAa_V-KYlCIngThU3SiPHiIMDcbf4wyR_r8CzX9dniWAGz1TnImoE_GF3G6g3yuYOgP1Njq_82g5Qv_21voyJqnCu6jL21mlZah94rIUPqTVDN1h4uBIONbr1xkOa3LgYssi1qYfQC8k5MBDGryUMlH7ba_0yib9OFUAUjs_EQXg",
+            "https://blogger.googleusercontent.com/img/a/AVvXsEhNYLiLm5oEvW9vWSTpo4mM5zceIHkMmkkRq8P_lUNXwIoHOvwio4s5mjr-CAr4zSsrFiOGnA5fK7PvcuUcXpNa4YnrcwdfoEJUaeGE3rxgGH-iu_j3D4QQ78jrKPByVUy6EUAjLCz6Hx1QrreeprfW-3MJZ-1vNTS5_W_1kgWDy0ab7Ct0AGsiPWbidQ",
+            "https://blogger.googleusercontent.com/img/a/AVvXsEiR_kKBKpQbopx0YR3PAGjQzOLP0FVqGN220Zn81kz_EE4dMbZWuqhRjSDWu1RinT7F76eY9qljLaKZuoYKTL6WlxHB6dsKwL7NUQe67vo1l3Lmr3gzO_mv9Y-kQpZN05hEyxImclx7jqq99A00zS6cPIzBAmViODXcaBG9F7upFTE_SxrGUnoOqGcSPQ",
+            "https://blogger.googleusercontent.com/img/a/AVvXsEidv2_gNU9wVjHm4j-KAFN6zIolKS7dhStbqBGOa_epobhJ90eID6nKjaeXlkSO3l6G9brBH3pdGUKA5Hti2aEw1fKC2dvuTldixuZ4v74Y1RyxYYnmZnvxboHscucgHLakN8GPZAzrAjVRg_YCY9NqbGS8hCVrLln1WALloKkwJxgWklboO6ZpZbJAGw",
+            "https://blogger.googleusercontent.com/img/a/AVvXsEi130AnyVnsegtvoQRuJzK5pissvkQSPuqccgXADGR6AlFcJ9pQLYnWNdjcoRWcvSG_ze37G5ShWcvRmDQph5-HQQjVz7enARKhgUpAbww8fO5SqF31FGcZPj9SugFRCLD9zp2dgHezdFyTQ5Tjk6wxAyDC-yWHFgMoBELTgz546QxiZg_HVv85-Ou_2A",
+            "https://blogger.googleusercontent.com/img/a/AVvXsEixeJ8FlSpMHnQUxBMfoeNnNIdEEqA8e8LF1xx_5wMyidEiu9051b7GSjHZQJLHnlX-bvSrj0AHyBZFqQAkpScpPFyNqtzg-kFy6TeFGbhRYqLXM5xCfBTMBi4w7tqEMuwTKo2kPn5RPm-u5vt-8KSxS0aXBsTYVnFNZ-11z0cMd9qd9yNj2qFz1CrdgA",
+            "https://blogger.googleusercontent.com/img/a/AVvXsEjnyQkyS3ofAFF_oXvPRStmpzDYjKqwtOjt17WlJ5DnHBz94JAo0PSwbnLrQ3iKXHSrK26ZlADyLzQFfzoVGh5_0zBVFBMnUPg6ApUra3O0TIRYCX1x7_cvjnDQfncEkUEMF0Sc0czXC1OQt5FtE7iV5FIGq7sS0HB4K2PHBGBcX2-c-SN-1rOsUxuYjw",
+            "https://blogger.googleusercontent.com/img/a/AVvXsEjGtSv9AMSH6HGeVFtVCjm_mVWSRMGs-U9Pt__wGGyYC-9KYJqxm3XAqXtW9XYNJXrdfY4omrbq4AJ0UD-9B-JhTFCZ-ruH_Vhu4-CM0rvaXLv-pRTSnnytWQml8PsYFV7Pb6IQOn8W1ZSBYiWo30FjklMAuKbr2lZGxDOZDPkWLRL713mTI78KDgo2Qw",
+            "https://blogger.googleusercontent.com/img/a/AVvXsEijonsnDIZ7T9Utggbtg6l5ZrFvOAAj1iBm5zSk6qlPSLZfCpnIL8hFkSCbVNfmJ9oqR4s7aKKPD9ErzpReQwevZ2L0m9xMK-3tWdcBWPY-a66vc2zSM7aKdcMOZSu4lEpCRwM9anudrWeMiRtg7KF2dYjubEZHyZiOF9O5MOv26L2AiM7Z3F76vwD5Uw",
+            "https://blogger.googleusercontent.com/img/a/AVvXsEgP2YzA-voXKB0-XAp5jRamw29Tx5emH7nnhwYan-oPPEtiocvhQBjjqcPwbx8hSDzHX5d5pxahhJLhbst83vfmL__2LfMz1cjAbEx2zcAFFI87EV2lnvreVBuW3ycZcMUN_wweh-8vYah7xHg4oTAXz1EGB_8O2TJg8-XrzAL0lFs_rLdAJx4HeCEoug",
+            "https://blogger.googleusercontent.com/img/a/AVvXsEjYmZRDHb4CbrMnnWgT0haHkg6-8xvrCo9Ty20W_BC2VQvDTJTsXQA34bWIRcEaa85zc7saer1YkaDrQMc3j2scrz_phbPZET1kFOJ20NlsHhiHoUrxb6pp8H53Ct6R-iyAumPGkeRzRpy4IwTlUQkWG1pTc3bcgqYANE-6Glfe9-i-wW0VJdlsUo4ryQ"
           ],
           "Name": "Chapter 1"
         }
       ],
       "Image": "http://i.truyenqqtop.com/slider/290x191/slider_1559213537.jpg",
+      "Description": "Kimetsu no Yaiba – Tanjirou là con cả của gia đình vừa mất cha. Một ngày nọ, Tanjirou đến thăm thị trấn khác để bán than, khi đêm về cậu ở nghỉ tại nhà người khác thay vì về nhà vì lời đồn thổi về ác quỷ luôn rình mò gần núi vào buổi tối. Khi cậu về nhà vào ngày hôm sau, bị kịch đang đợi chờ cậu…",
       "Name": "Kimetsu No Yaiba"
     }
 
   ],
   "Comic": [
     {
-      "Category": "Manga/Comedy",
+      "Category": "Adventure/Comedy/Fantasy/Sci-Fi/Slice Of Life",
       "Chapters": [
         {
           "Links": [ "http://mangaqq.net/9114/1/0.jpg?c=w132321", "http://mangaqq.net/9114/1/1.jpg?c=w132321", "http://mangaqq.net/9114/1/2.jpg?c=w132321", "http://mangaqq.net/9114/1/4.jpg?c=w132321", "http://mangaqq.net/9114/1/5.jpg?c=w132321", "http://mangaqq.net/9114/1/6.jpg?c=w132321", "http://mangaqq.net/9114/1/7.jpg?c=w132321", "http://mangaqq.net/9114/1/8.jpg?c=w132321", "http://mangaqq.net/9114/1/9.jpg?c=w132321", "http://mangaqq.net/9114/1/10.jpg?c=w132321", "http://mangaqq.net/9114/1/11.jpg?c=w132321", "http://mangaqq.net/9114/1/12.jpg?c=w132321", "http://mangaqq.net/9114/1/13.jpg?c=w132321", "http://mangaqq.net/9114/1/15.jpg?c=w132321", "http://mangaqq.net/9114/1/16.jpg?c=w132321", "http://mangaqq.net/9114/1/17.jpg?c=w132321", "http://mangaqq.net/9114/1/18.jpg?c=w132321", null, "https://s8.mkklcdnv8.com/mangakakalot/d2/doraemon/vol1_chapter_1_all_the_way_from_a_future_world/20.jpg" ],
@@ -150,10 +144,11 @@
         }
       ],
       "Image": "http://i.truyenqqtop.com/ebook/190x247/truyen-ngan-doraemon-moi-nhat_1583459733.jpg",
+      "Description": "Các câu chuyện trong Doraemon thường có một công thức chung, đó là xoay quanh những rắc rối hay xảy ra với cậu bé Nobita học lớp bốn, nhân vật chính thứ nhì của bộ truyện. Doraemon có một chiếc túi thần kỳ trước bụng với đủ loại bảo bối của tương lai. Cốt truyện thường gặp nhất sẽ là Nobita trở về nhà khóc lóc với những rắc rối mà cậu gặp phải ở trường hoặc với bạn bè. Sau khi bị cậu bé van nài hoặc thúc giục, Doraemon sẽ đưa ra một bảo bối giúp Nobita giải quyết những rắc rối của mình, hoặc là để trả đũa hay khoe khoang với bạn bè của cậu. Nobita sẽ lại thường đi quá xa so với dự định ban đầu của Doraemon, thậm chí với những bảo bối mới cậu còn gặp rắc rối lớn hơn trước đó. Đôi khi những người bạn của Nobita, thường là Suneo (Xêkô) hoặc Jaian (Chaien) lại lấy trộm những bảo bối và sử dụng chúng không đúng mục đích. Tuy nhiên thường thì ở cuối mỗi câu chuyện, những ai sử dụng sai mục đích bảo bối sẽ phải chịu hậu quả do mình gây ra, và người đọc sẽ rút ra được bài học từ đó",
       "Name": "Doraemon"
     },
     {
-      "Category": "Manga/Action",
+      "Category": "Action/Adventure/Comedy/Fantasy/Shounen/Supernatural",
       "Chapters": [
         {
           "Links": [
@@ -266,14 +261,15 @@
         }
       ],
       "Image": "http://i.truyenqqtop.com/ebook/190x247/dragon-ball-z-onepunch-man_1598275248.jpg?r=r8645456",
+      "Description": "Câu truyện kể về một cậu bé tên Songoku cùng nhóm bạn của mình tham gia những chuyến phiêu lưu tìm ngọc rồng, chống lại cái ác bảo vệ trái đất. Nhân vật Songoku được mọi người ưa thích bởi tính thánh thiện và ngây ngô của mình. Câu truyện lôi cuốn người qua những tình huống phiêu lưu kì thú, những pha đấu võ đẹp mắt, và những tình huống hài hước. Dragon ball là bộ truyện tranh thuộc nhóm nổi tiếng nhất thế giới, được rất nhiều bạn trẻ ưa thích.",
       "Name": "Dragon Ball"
     },
     {
-      "Category": "Manga/Action",
+      "Category": "Action/Adventure/Comedy/Mature",
       "Chapters": [
         {
           "Links": [
-            
+
             "https://2.bp.blogspot.com/4vIQEFjGC52b-868QMFgpuhU9EkEpG1WHQe5AFRlNs21qyCMa9-6POknn-F9N58NuElYqJFSYTgdeu9i1bRDWNbZWW78TvAohDLgYZZSycV8jrISYbsFLYoAwkSroWSaBPzbf94hEw=s1600",
             "https://2.bp.blogspot.com/gZdFON8kytk2FgupJ2v3cVdw_VssHii-1H_RkprcsknY5piULd1y68ucHKQlbYCQb8N19LFul11nJBELk0sQxZS8LISEWPO16CP7rHSjbx6dVqtCSjMperFEAZZL4Deo3VKBrMJg7w=s1600",
             "https://2.bp.blogspot.com/NBVqeGkeW0e7BODJ6CoSnGB3aifCp4negmIxiXiByq70ZoaIj3Cgq0BfLMkPW4K6EnNM5qjD6wZe0DNPqlF7LBiBaCbsQ1mVQhOny4JYuZHUSvfvy8hojzqDlItwMzqxeOwtXO4yPg=s1600",
@@ -297,7 +293,7 @@
         },
         {
           "Links": [
-            
+
             "https://2.bp.blogspot.com/xjw9rlJtMDm6ZO32on82C3WgFQSf4WglMsCavXaUPJaw_oFEFHvNYB9-yUCBZVp5Qysq86cJwiLs=s1600",
             "https://2.bp.blogspot.com/ESFZWB0dfSAYZFsKD-wiqvtaGHTnsKwGbfAMf7U4tE3W9H2P8n6cAQkGP5fiLk51kwpgvQS24TYL=s1600",
             "https://2.bp.blogspot.com/b7z2jHuYwpcb5S5eA6WXjDXQTfDH4eqz2r2Uz7lx-8LH2Kl-EMkRkCcHVz8yi8CBA0STxQXaCAdN=s1600",
@@ -326,7 +322,7 @@
         },
         {
           "Links": [
-            
+
             "https://2.bp.blogspot.com/afPunkhPO9Oe2nLLXXZpS9B1tt9QiBUr1p7QAUFyJGSTWZl0dXB54Z-rps7nWO881O1GsxpqgZZk=s1600",
             "https://2.bp.blogspot.com/byQVcNu0eLH1GFqOxDUi2PYr3HKBtE_ph0ydq3PIaqOhCF8rDBT6ZUpPtv0ZPEgQu3qeicW33kLk=s1600",
             "https://2.bp.blogspot.com/byQVcNu0eLH1GFqOxDUi2PYr3HKBtE_ph0ydq3PIaqOhCF8rDBT6ZUpPtv0ZPEgQu3qeicW33kLk=s1600",
@@ -356,98 +352,99 @@
         }
       ],
       "Image": "https://2.bp.blogspot.com/UyIClw5KWvyrIHioRjGeqaX3BdNRLF0jdlZTHesIxLZy6zX9zOwY26UrF6w5j_v5rGakyQxdPfoi=s1600",
+      "Description": "Spider Man, anh hàng xóm thiện lành - người luôn trông coi thành phố New Yord và giúp đỡ các công dân. Anh ta được xem là một hình mẫu siêu anh hùng vạn người ngưỡng mộ. Yuu, một học sinh trung họctầm thường, cậu cũng như bao người khác luôn ngưỡng mộ Spider Man và dành thời gian để theo dõi các chiến tích của anh ta qua màn ảnh. Một ngày nọ cậu bất ngờ nhặt được một bộ suit ",
       "Name": "The Amazing Spider-Man (1963)"
     },
     {
-      "Category": "Manga/Action",
+      "Category": "Action/Adventure/Comedy/Shounen/Supernatural",
       "Chapters": [
         {
           "Links": [
-            
-            "http://truyenvua.xyz/244/fix-196.6/0.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/fix-196.6/2.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/fix-196.6/3.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/fix-196.6/4.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/fix-196.6/6.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/fix-196.6/7.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/fix-196.6/8.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/fix-196.6/9.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/fix-196.6/10.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/fix-196.6/11.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/fix-196.6/12.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/fix-196.6/13.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/fix-196.6/14.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/fix-196.6/16.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/fix-196.6/17.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/fix-196.6/17.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/fix-196.6/20.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/fix-196.6/21.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/fix-196.6/23.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/fix-196.6/25.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/fix-196.6/26.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/fix-196.6/28.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/fix-196.6/29.jpg?gf=hdfgdfg"
+
+            "https://cdn.readopm.com/file/mangap/3262/10109500/1.png",
+            "https://cdn.readopm.com/file/mangap/3262/10109500/3.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10109500/4.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10109500/5.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10109500/6.png",
+            "https://cdn.readopm.com/file/mangap/3262/10109500/7.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10109500/8.png",
+            "https://cdn.readopm.com/file/mangap/3262/10109500/9.png",
+            "https://cdn.readopm.com/file/mangap/3262/10109500/10.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10109500/11.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10109500/13.png",
+            "https://cdn.readopm.com/file/mangap/3262/10109500/14.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10109500/15.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10109500/18.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10109500/19.png",
+            "https://cdn.readopm.com/file/mangap/3262/10109500/20.png",
+            "https://cdn.readopm.com/file/mangap/3262/10109500/21.png",
+            "https://cdn.readopm.com/file/mangap/3262/10109500/22.png",
+            "https://cdn.readopm.com/file/mangap/3262/10109500/24.png",
+            "https://cdn.readopm.com/file/mangap/3262/10109500/26.png",
+            "https://cdn.readopm.com/file/mangap/3262/10109500/27.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10109500/28.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10109500/29.jpeg"
           ],
           "Name": "Chapter 1"
         },
         {
           "Links": [
-            
-            "http://truyenvua.xyz/244/196.7/1.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.7/2.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.7/3.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.7/4.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.7/5.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.7/6.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.7/7.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.7/8.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.7/9.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.7/10.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.7/11.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.7/12.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.7/13.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.7/14.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.7/15.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.7/16.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.7/17.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.7/18.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.7/19.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.7/21.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.7/22.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.7/23.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.7/24.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.7/26.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.7/29.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.7/30.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.7/33.jpg?gf=hdfgdfg"
+
+            "https://cdn.readopm.com/file/mangap/3262/10110600/1.png",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/3.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/4.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/5.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/6.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/7.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/8.png",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/9.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/10.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/11.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/12.png",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/13.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/14.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/16.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/17.png",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/18.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/19.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/20.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/21.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/22.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/23.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/24.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/25.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/26.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/27.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/28.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/29.jpeg"
           ],
           "Name": "Chapter 2"
         },
         {
           "Links": [
-           
-            "http://truyenvua.xyz/244/196.8/0.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.8/1.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.8/2.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.8/3.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.8/4.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.8/5.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.8/6.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.8/8.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.8/9.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.8/10.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.8/11.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.8/12.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.8/13.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.8/14.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.8/15.jpg?gf=hdfgdfg",
-            "http://truyenvua.xyz/244/196.8/17.jpg?gf=hdfgdfg"
+
+            "https://cdn.readopm.com/file/mangap/3262/10110600/37.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/38.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/39.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/40.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/41.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/42.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/43.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/44.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/45.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/46.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/47.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/48.png",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/49.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/50.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/52.jpeg",
+            "https://cdn.readopm.com/file/mangap/3262/10110600/53.jpeg"
           ],
           "Name": "Chapter 3"
         },
         {
           "Links": [
-            
+
             "http://truyenvua.xyz/244/197/1.jpg?gf=hdfgdfg",
             "http://truyenvua.xyz/244/197/2.jpg?gf=hdfgdfg",
             "http://truyenvua.xyz/244/197/3.jpg?gf=hdfgdfg",
@@ -479,14 +476,15 @@
         }
       ],
       "Image": "http://i.truyenqqtop.com/ebook/190x247/onepunch-man_1552232163.jpg?r=r8645456",
+      "Description": "Onepunch-Man là một Manga thể loại siêu anh hùng với đặc trưng phồng tôm đấm phát chết luôn… Lol!!! Nhân vật chính trong Onepunch-man là Saitama, một con người mà nhìn đâu cũng thấy “tầm thường”, từ khuôn mặt vô hồn, cái đầu trọc lóc, cho tới thể hình long tong. Tuy nhiên, con người nhìn thì tầm thường này lại chuyên giải quyết những vấn đề hết sức bất thường. Anh thực chất chính là một siêu anh hùng luôn tìm kiếm cho mình một đối thủ mạnh. Vấn đề là, cứ mỗi lần bắt gặp một đối thủ tiềm năng, thì đối thủ nào cũng như đối thủ nào, chỉ ăn một đấm của anh là… chết luôn. Liệu rằng Onepunch-Man Saitaman có thể tìm được cho mình một kẻ ác dữ dằn đủ sức đấu với anh? Hãy theo bước Saitama trên con đường một đấm tìm đối cực kỳ hài hước của anh!!",
       "Name": "Onepunch Man"
     },
     {
-      "Category": "Manga/Action",
+      "Category": "Action/Comedy/Seinen/Sci-Fi/Harem/Manhwa/Commic",
       "Chapters": [
         {
           "Links": [
-            
+
             "https://2.bp.blogspot.com/heivi9tPaKdhGavQWndFIzY7vLIYyYbcXiJI1KDaTyn-pEmZ38dntxPb-lv8mZD_ayFDQZbK_Qdx=s0",
             "https://2.bp.blogspot.com/Z7PfjVQlvsp50OwM3DJ8lIIAxY2praG8sn8gn2-udA7cpRCS0rqdTBGXBwdkEtu-1FvZCJ7j9E67=s0",
             "https://2.bp.blogspot.com/yPJ27jE65oODcysZL0vp3wCAb2CJZSK2jzmMVb-mkmYCrWmB2ZjTMMXrv8smOMeCMA7zFyMUj9tW=s0",
@@ -516,7 +514,7 @@
         },
         {
           "Links": [
-            
+
             "https://2.bp.blogspot.com/dDDVRzgcd23t13m8IUa1-Vpx-b-XkqQIhXV4BrdFbNVCRvXoisZpsLGVN1giwI-TNab-6sxfnsau=s0",
             "https://2.bp.blogspot.com/myyqFvQlFZKbEZ8JAIsYV2LoCR2-an-i_GrUfd-7gTjjEZap84LWGq4ZkLuob9dqkJcNKCqln6WK=s0",
             "https://2.bp.blogspot.com/F3n2inmYcFzGxY1R2pN9yxGkkO_jBzcqeU6CkKRGS65-C0oYBQ4M25VIx_dcoGpRJgf-KUeN317z=s0",
@@ -551,7 +549,7 @@
         },
         {
           "Links": [
-            
+
             "https://2.bp.blogspot.com/flan_D8P4l6tHi0ApxmJxlvYRBjBT8meQuzbhGGu2p2P9ts7Cl3cRv5GaeNDxEY8UPMWex0vd6se=s0",
             "https://2.bp.blogspot.com/oAkLTIF48Z2-GEHqfDyBZe21vhRayeWoeI-zwg_NonOhb_o5EVMHKXXz0mTEJWHfN8HJsStPBy78=s0",
             "https://2.bp.blogspot.com/oAkLTIF48Z2-GEHqfDyBZe21vhRayeWoeI-zwg_NonOhb_o5EVMHKXXz0mTEJWHfN8HJsStPBy78=s0",
@@ -580,7 +578,7 @@
         },
         {
           "Links": [
-            
+
             "https://2.bp.blogspot.com/rh-ecWzXkA-40RAl-hVf4gWR3jJcBhVC2hp6ms2tY4d1UPMZy51RFhzhdZaSr_hgTFGwhKGB8Phn=s0",
             "https://2.bp.blogspot.com/VR2yJs-ttnSmeiNMGrz_-BCvcw4NtF4JRPks0gy_TwEMA1nSwiK_t0hebLDKlpM5qe4jgaufPZda=s0",
             "https://2.bp.blogspot.com/oQ7eK3tdcc_rDCERhkt5HTT7kkwfJHIV0GHVDx_2N4hAvUD2fH-q6J97WDgadI8ktDfDDelzygDG=s0",
@@ -617,14 +615,15 @@
         }
       ],
       "Image": "https://i.annihil.us/u/prod/marvel/i/mg/9/70/5a5fb8b3e6713/portrait_uncanny.jpg",
+      "Description": "Tốt nghiệp đại học Mu Siyun gửi sơ yếu lý lịch của mình đến hạm đội Beiyang theo ý thích và bằng cách nào đó đã trở thành Đô đốc Hạm đội! Thế là câu chuyện về một đô đốc với một hậu cung của 3000 binh sĩ nữ chinh phục vũ trụ bắt đầu…..",
       "Name": "The Invincible Iron Man"
     },
     {
-      "Category": "Manga/Comedy",
+      "Category": "Action/Comedy/Drama/Shounen/Supernatura/Mystery/Psychological/Horror",
       "Chapters": [
         {
           "Links": [
-            
+
             "https://2.bp.blogspot.com/-dpEyDyoMX0I/W-CoSNW0J3I/AAAAAAABV_s/gdh-SXPr204etq4lu4K7PZ2ge0ql57b0wCHMYCw/s0/RCO001.jpg",
             "https://2.bp.blogspot.com/-uRCCRfLePOk/W-CoSv3hb9I/AAAAAAABV_w/CjDqE907IUYNXJwna-gSOI9TeuNZsfPSQCHMYCw/s0/RCO002.jpg",
             "https://2.bp.blogspot.com/-zzaoHuBP9OA/W-CoS7NbigI/AAAAAAABV_0/u4O4eVqhS6sP0b80T4_En2VXJoEnc-oTQCHMYCw/s0/RCO003.jpg",
@@ -652,14 +651,15 @@
         }
       ],
       "Image": "https://1.bp.blogspot.com/-n3i6--8OSDo/X3gjf-o9VVI/AAAAAAAAkwU/OPhZHaz9D7I-nKOPJR_Att95VUES6TMEQCLcBGAsYHQ/s0/Marvel%2BSuper%2BHero%2BAdventures%2BCaptain%2BMarvel%2B-%2BFirst%2BDay%2Bof%2BSchool%2521-min.jpg",
+      "Description": "Như các bạn đã từng biết là trong các bộ truyện kinh dị đa số các nhân vật chính đều rất mạnh mẽ đẹp trai, phong độ và được nhiều gái theo v…v…! Nhưng đó là trong mấy truyện zombie bình thường thôi!",
       "Name": "Super Hero Adventures"
     },
     {
-      "Category": "Manga/Action",
+      "Category": "Action/Drama/Adventure",
       "Chapters": [
         {
           "Links": [
-            
+
             "https://2.bp.blogspot.com/WEqwcYk1K6_VYDNsCSkRzeyc_n5Cb3-f-_aTpX1mhGL0Rx5hFP6-meN3TXEFRiM4eDVZsthYCBJlJ7toxvNwRIgC5j1vO4KcH5KwCLmWkHa0fCfSIlPMhglBGj8AL_6GTofcEdNCYw=s1600",
             "https://2.bp.blogspot.com/Qx8lwNxCcdLQOdyLQgtVvbWObeQb-_rb7f1nidK_DJ_95K85L6BNyrwa1RAij0xIt26coSN1StGvh4hzCmHKWxaca1qAsK7Y-MdaL5Phs5pBNXFcs0quF3KlaQzcMlhdm9p3rb6rbQ=s1600",
             "https://2.bp.blogspot.com/Yfx_KF3i-SLFILx1nkoKS3DHOdpflOT0KbmccpnFMkPO8qjCVlMB3HjoAinoyT-EZR7jni9uFcJUqYt8xtVmI9mcOdCKBs71TjwmxRBgH4FEAqH2WF8o-P0TlOe5txnjFoR80KhGqQ=s1600",
@@ -694,14 +694,15 @@
         }
       ],
       "Image": "https://readcomicsbook.com/images/series/23365.jpg",
+      "Description": "Trong bộ I am a hero này thì main của chúng ta lại là một thằng bất tài vô dụng, bị chính bạn gái của mình sau khi biến thành zombie cắn, cậu ta chỉ biết chạy chạy và chạy… nhưng tại sao bộ truyện này lại hấp dẫn?",
       "Name": "Cable"
     },
     {
-      "Category": "Manga/Action",
+      "Category": "Action/Comedy/Drama",
       "Chapters": [
         {
           "Links": [
-            
+
             "https://2.bp.blogspot.com/HZII-mGAT0GdkIuPsdcS8AxmzH61ZmrCcYq00y2uqSkAMO9yAvMaFM05bniwXLIiCnDdXhy1mOyjyIKfw8_PPMnAm7ZnP_Lk8PP_iUxaAFHE73HlnMrHyMHSeskHC-0-u2BbvO9tTg=s1600",
             "https://2.bp.blogspot.com/zxpO2MzHe0olcKvSVmIp-M2lCEpBWvcg764Sg3TJkYL9qWm8NLlsrXqjQzi9yrBG7pPyhzk3Rs8G-_pFGnapDfvyUtPJQonuQC4OMTPIoJt2oJ-1cWQymOv5RXpOJr1BHSAwTduVJw=s1600",
             "https://2.bp.blogspot.com/ha0OUX0cKkLtVhKW0ARoJLJdnrxMoeph0Il_uavvFDFMZSRUiimGGx3-jaaqJAGj1ZF1VTG4gZikRYq9x1KZ82QeKFGO5gqmeSeZy2fSt-ed07-kEkVdKp11akBHNk2-JJbi3UCYHg=s1600",
@@ -730,7 +731,7 @@
         },
         {
           "Links": [
-            
+
             "https://2.bp.blogspot.com/dj_mOcoOCiOrHq8fQHQ51TJjuroZdWqXdMMHnRFCeAiqmPJmD1X1GJ4kwIzcXIm-nxY7yHbFQ3OuDc8wt8EQgJND4l6ovj4imqeXiZx9q8lvg0IslW-TlEt8s5vzgrDr7g2CVNO0vQ=s1600",
             "https://2.bp.blogspot.com/2Ra6xlcahLRkFJn4G4faRws_oZcOMqtFuppO6O5-gLRJ_s0hw0BBZy14KYTkZ-Pzx6Mt-Ppl7dH7ysGS1vzFfx6_ZvH-BnxL09tu_CLG5JVpPyHchcV5rmix9pbDpl4BqBWdCW1l_Q=s1600",
             "https://2.bp.blogspot.com/S_e1QNF5270NU3Jy4lB8ECIOa6c82hGtdpZsckvyDsmeP1dUUKh-vNhpql-XFOpVl3jePajHEV_zdY38y0EBw47LLUyiFW9D1Un8U-5bgiqeW_wAqxMxmqGl0RqzKdcazYZF3XoG8Q=s1600",
@@ -764,7 +765,7 @@
         },
         {
           "Links": [
-            
+
             "https://2.bp.blogspot.com/uC5TlYD5IrTmZbavnou0dcLLEpT32cXFgO9kwLkHWUA_xIdP7qpjIZNCcuXuahLdkrgHX-TykaKqUPk-L-uerEdqsdELa1h5H_yc1u2OE-zClWpK3Pj37m34vRODj7hSHWxl09Efow=s1600",
             "https://2.bp.blogspot.com/HyFB_n4yEmAGDmVSv1z3u0WshHS-WDPg7GrzC_2VVWSXphQ4FgNwomb4uL1gN2W4B4d2Fb-IpUOpjexvgbweBUHHIeLbHTxC5Kt5DolfVHdmTKHTDO_5WlCm57-KTDpoYCRZyL-T3w=s1600",
             "https://2.bp.blogspot.com/lCPpY_zn60WL_2WmayLdhE3oA5S61Hdqdv-RMQX2NW49uebtJYOHNrX-ERays7ixtayVWDyJxMqd8Fe9NWcdYHhdUJoP20ddkfD_-ULsGwWPCMIs18DB_JmQzsVomosZZZJFRSw4Gg=s1600",
@@ -801,14 +802,15 @@
         }
       ],
       "Image": "https://2.bp.blogspot.com/-1vg2SQAuP2U/XCQk6RvQBHI/AAAAAAAAJPM/OGTvGgBerLUd1ZfrPOns7ZHwIdHMnfnRQCLcBGAs/s1600/X-Force%2B%25282019%2529-min.jpg",
+      "Description": "Truyện thì rất ư là bình thường, chỉ là những mẫu truyện nhỏ xung quanh các cô bé mỗi ngày đến trường là 1 ",
       "Name": "X-Force"
     },
     {
-      "Category": "Manga/Action",
+      "Category": "Action/Shounen/Mystery/Horror/Historical/Tragedy",
       "Chapters": [
         {
           "Links": [
-            
+
             "https://2.bp.blogspot.com/DbqWx2fyPNUwddFmUYs6belgunoQVxhCcQJmPghVCdA7eGuBpJdmK534EC1r1Wc2B0P57z9wiLiU=s0",
             "https://2.bp.blogspot.com/3BQX7y7jVGtla9jySm4JyLZt_VzvhukgWiFAVnCShA7gxPSyxi3KyLlFVJg1RR3gWVG_vr6EKGRe=s0",
             "https://2.bp.blogspot.com/xR5rHYvuaT7CZsxlvJehUB6oyi33URhFtBhTu7gkZJy0q5j6msfOef0oZ20YvYQx-HsbsUoiYUgd=s0",
@@ -836,10 +838,11 @@
         }
       ],
       "Image": "https://2.bp.blogspot.com/DbqWx2fyPNUwddFmUYs6belgunoQVxhCcQJmPghVCdA7eGuBpJdmK534EC1r1Wc2B0P57z9wiLiU=s0",
+      "Description": "Mô tả",
       "Name": "Avengers"
     },
     {
-      "Category": "Manga/Action",
+      "Category": "Fantasy/Action",
       "Chapters": [
         {
           "Links": [
@@ -905,6 +908,7 @@
         }
       ],
       "Image": "https://1.bp.blogspot.com/-upaHfVwa-Jg/Xg1MW2VmRpI/AAAAAAAATs8/tjYcCsgSag4rV51aL7OSze2d__5MYRqBQCLcBGAsYHQ/s1600/Thor%2B%25282020%2529-min.jpg",
+      "Description":  "Mo ta",
       "Name": "Thor"
     },
     {
@@ -941,10 +945,11 @@
         }
       ],
       "Image": "https://1.bp.blogspot.com/-RDyLYlfJDHg/YNhALyDFwUI/AAAAAAAAvI0/g0UlhMEyUGgQNEBbSuSH4ItSp8MRfrY1ACLcBGAsYHQ/s0/Wolverine%2B%2526%2BThe%2BX-Men-min.jpg",
+      "Description": "Mo ta",
       "Name": "X-men Wolverine"
     },
     {
-      "Category": "Manga/Action",
+      "Category": "Action/Adventure/Comedy/Drama/Fantasy/Shounen/Supernatural",
       "Chapters": [
         {
           "Links": [
@@ -1020,10 +1025,11 @@
 
       ],
       "Image": "http://i.truyenqqtop.com/ebook/190x247/dao-hai-tac_1552224567.jpg?r=r8645456",
+      "Description": "One Piece là câu truyện kể về Luffy và các thuyền viên của mình. Khi còn nhỏ, Luffy ước mơ trở thành Vua Hải Tặc. Cuộc sống của cậu bé thay đổi khi cậu vô tình có được sức mạnh có thể co dãn như cao su, nhưng đổi lại, cậu không bao giờ có thể bơi được nữa. Giờ đây, Luffy cùng những người bạn hải tặc của mình ra khơi tìm kiếm kho báu One Piece, kho báu vĩ đại nhất trên thế giới. Trong One Piece, mỗi nhân vật trong đều mang một nét cá tính đặc sắc kết hợp cùng các tình huống kịch tính, lối dẫn truyện hấp dẫn chứa đầy các bước ngoặt bất ngờ và cũng vô cùng hài hước đã biến One Piece trở thành một trong những bộ truyện nổi tiếng nhất không thể bỏ qua. Hãy đọc One Piece để hòa mình vào một thế giới của những hải tặc rộng lớn, đầy màu sắc, sống động và thú vị, cùng đắm chìm với những nhân vật yêu tự do, trên hành trình đi tìm ước mơ của mình.",
       "Name": "Đảo Hải Tặc"
     },
     {
-      "Category": "Manga/Action",
+      "Category": "Action/Adventure/Comedy/Shounen/Supernatural",
       "Chapters": [
         {
           "Links": [
@@ -1098,10 +1104,11 @@
 
       ],
       "Image": "http://st.imageinstant.net/data/comics/89/hoc-vien-sieu-anh-hung-quai-hiep.jpg",
+      "Description": "Vào tương lai, lúc mà con người với những sức mạnh siêu nhiên là điều thường thấy quanh thế giới. Đây là câu chuyện về Izuku Midoriya, từ một kẻ bất tài trở thành một siêu anh hùng. Tất cả ta cần là mơ ước.",
       "Name": "Học viện siêu anh hùng: Quái hiệp"
     },
     {
-      "Category": "Manga/Action",
+      "Category": "Action/Adventure/Fantasy/Supernatural/Romance/Seinen/Horror/Tragedy",
       "Chapters": [
         {
           "Links": [
@@ -1170,10 +1177,11 @@
 
       ],
       "Image": "https://i1.wp.com/doctruyen3q.com/images/comics/berserk.jpg",
+      "Description": "Truyện kể về Gatts, hay Black Swordsman, trong cuộc hành trình của anh đi tìm lối thoát và trả thù Griffith, người bạn thân nhất, người thủ lĩnh đã bán đứng toàn bộ quân đội cho ác quỉ để đạt được giấc mơ của mình. Gatts và người yêu của anh, Caska, chịu 1 lời nguyền như vật “ hiến tế” cho Griffith và luôn bị săn lùng bởi vô số ác quỷ. Chiến đấu liên tục không ngừng nghỉ, Gatts với một sức mạnh phi thường từ tuổi thơ khắc nghiệt và những năm tháng trên chiến trường, vung thanh gươm Dragon khổng lồ xẻ nát những gì cản đường anh, để bảo vệ người yêu, để sống sót.",
       "Name": "BERSERK"
     },
     {
-      "Category": "Manga/Action",
+      "Category": "Action/Adventure/Fantasy/Shounen",
       "Chapters": [
         {
           "Links": [
@@ -1301,10 +1309,11 @@
 
       ],
       "Image": "http://st.imageinstant.net/data/comics/99/tay-du-ky-ngoai-truyen.jpg",
+      "Description": "Không biết nói thế nào, câu chuyện kể về tôn ngộ không vì lỡ tay đánh đường tăng liệt nửa người, nên phải đi thỉnh kinh cùng với long nữ và tiểu tăng thỏ, đối thủ truyền kiếp của y.",
       "Name": "Tây Du Ký"
     },
     {
-      "Category": "Manga/Action",
+      "Category": "Action/Adventure/Comedy/Fantasy/Seinen/Gender Bender/Ecchi",
       "Chapters": [
         {
           "Links": [
@@ -1330,6 +1339,7 @@
         }
       ],
       "Image": "http://st.imageinstant.net/data/comics/78/toi-da-chuyen-sinh-thanh-slime.jpg",
+      "Description": "Truyện tranh Tensei Shitara Slime Datta Ken: Dạo Quanh Ma Quốc được cập nhật nhất và đầy đủ nhất tại TruyenQQTop.Com. Hãy ghé thăm TruyenQQTop.Com mỗi ngày để được đọc các chương mới nhất của Tensei Shitara Slime Datta Ken: Dạo Quanh Ma Quốc.",
       "Name": "Tensei Shitara Suraimu Datta Ken"
     }
   ]

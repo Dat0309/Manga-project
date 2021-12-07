@@ -61,4 +61,10 @@ dependencies {
     // Also declare the dependency for the Google Play services library and specify its version
     implementation 'com.google.android.gms:play-services-auth:19.2.0'
 
+    // Circle Iamge view
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //SpotsDialog
+    implementation 'com.github.d-max:spots-dialog:1.1@aar'
+
 }

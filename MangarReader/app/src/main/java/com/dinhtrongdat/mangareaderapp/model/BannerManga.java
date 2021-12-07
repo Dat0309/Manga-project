@@ -4,16 +4,17 @@ import java.io.Serializable;
 import java.util.List;
 
 public class BannerManga implements Serializable {
-    private String Name, Image, Category;
+    private String Name, Image, Category, Description;
     private List<Chapter> Chapters;
 
     public BannerManga() {
     }
 
-    public BannerManga(String name, String image, String category, List<Chapter> chapters) {
+    public BannerManga(String name, String image, String category, String description, List<Chapter> chapters) {
         Name = name;
         Image = image;
         Category = category;
+        Description = description;
         Chapters = chapters;
     }
 
@@ -47,5 +48,13 @@ public class BannerManga implements Serializable {
 
     public void setChapters(List<Chapter> chapters) {
         Chapters = chapters;
+    }
+
+    public String getDescription() {
+        return Description;
+    }
+
+    public void setDescription(String description) {
+        Description = description;
     }
 }
