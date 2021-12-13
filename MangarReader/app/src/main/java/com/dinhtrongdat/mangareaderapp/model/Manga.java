@@ -4,18 +4,20 @@ import java.io.Serializable;
 import java.util.List;
 
 public class Manga implements Serializable {
-    private String Name, Image, Category, Description;
+    private String Name, Image, Category, Description, Author, Backdrop;
     List<Chapter> Chapters;
 
     public Manga() {
     }
 
-    public Manga(String name, String image, String category, String description, List<Chapter> chapters) {
+    public Manga(String name, String image, String category, String description, String author, String backdrop, List<Chapter> chapters) {
         Name = name;
         Image = image;
         Category = category;
         Description = description;
         Chapters = chapters;
+        Author = author;
+        Backdrop = backdrop;
     }
 
     public String getName() {
@@ -56,5 +58,21 @@ public class Manga implements Serializable {
 
     public void setDescription(String description) {
         Description = description;
+    }
+
+    public String getAuthor() {
+        return Author;
+    }
+
+    public void setAuthor(String author) {
+        Author = author;
+    }
+
+    public String getBackdrop() {
+        return Backdrop;
+    }
+
+    public void setBackdrop(String backdrop) {
+        Backdrop = backdrop;
     }
 }

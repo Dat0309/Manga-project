@@ -47,7 +47,7 @@ public class BannerAdapter extends PagerAdapter {
         View view = LayoutInflater.from(context).inflate(R.layout.banner_item,null);
         ImageView imgBanner = view.findViewById(R.id.img_banner);
 
-        Glide.with(context).load(Banners.get(position).getImage()).into(imgBanner);
+        Glide.with(context).load(Banners.get(position).getBackdrop()).into(imgBanner);
         container.addView(view);
 
         view.setOnClickListener(new View.OnClickListener() {
