@@ -12,4 +12,7 @@
     <color name="background">#D1D1D1</color>
     <color name="scrim">#FBFBFB</color>
     <color name="background_banner">#656565</color>
+    <color name="btn_read_manga">#ED3232</color>
+    <color name="color_line">#8B6D6D</color>
+    <color name="color_textview">#54FFFFFF</color>
 </resources>
