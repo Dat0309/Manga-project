@@ -4,5 +4,8 @@
         <item>@font/actor</item>
         <item>@font/antic</item>
         <item>@font/montserrat</item>
+        <item>@font/playfair_display</item>
+        <item>@font/poppins</item>
+        <item>@font/poppins_bold</item>
     </array>
 </resources>
