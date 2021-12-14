@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.dinhtrongdat.mangareaderapp.R;
@@ -155,8 +156,11 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
      */
     @Override
     public void onMangaItemClick(int clickedItemIndex) {
-
+        Intent intent = new Intent(MangaAct.this, MangaDetailsAct.class);
+        intent.putExtra("manga",Mangas.get(clickedItemIndex));
+        startActivity(intent);
     }
+
 
     /**
      * Lớp kế thừa TimerTask, định nghĩa phương thức xử lý tự động chạy của banner.
