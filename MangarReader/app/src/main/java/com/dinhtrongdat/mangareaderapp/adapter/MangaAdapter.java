@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,18 +16,21 @@ import com.bumptech.glide.Glide;
 import com.dinhtrongdat.mangareaderapp.R;
 import com.dinhtrongdat.mangareaderapp.model.Manga;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class MangaAdapter extends RecyclerView.Adapter<MangaAdapter.ViewHolderManga> {
+public class MangaAdapter extends RecyclerView.Adapter<MangaAdapter.ViewHolderManga> implements Filterable {
 
     Context context;
     List<Manga> Mangas;
+    List<Manga> MangesOld;
     final private OnItemMangaClick mOnClick;
 
     public MangaAdapter(Context context, List<Manga> mangas, OnItemMangaClick mOnClick) {
         this.context = context;
         this.Mangas = mangas;
         this.mOnClick = mOnClick;
+        this.MangesOld = mangas;
     }
 
     @NonNull
@@ -45,6 +50,35 @@ public class MangaAdapter extends RecyclerView.Adapter<MangaAdapter.ViewHolderMa
     @Override
     public int getItemCount() {
         return Mangas.size();
+    }
+
+    @Override
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                String strSearch = constraint.toString();
+                if(strSearch.isEmpty()){
+                    Mangas = MangesOld;
+                }else{
+                    List<Manga> list = new ArrayList<>();
+                    for(Manga manga : MangesOld)
+                        if(manga.getName().toLowerCase().contains(strSearch.toLowerCase()))
+                            list.add(manga);
+
+                        Mangas = list;
+                }
+                FilterResults filterResults = new FilterResults();
+                filterResults.values = Mangas;
+                return filterResults;
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+                Mangas = (List<Manga>) results.values;
+                notifyDataSetChanged();
+            }
+        };
     }
 
     public static interface OnItemMangaClick{

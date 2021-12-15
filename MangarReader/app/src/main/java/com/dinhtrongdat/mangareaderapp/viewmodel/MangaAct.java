@@ -2,12 +2,21 @@ package com.dinhtrongdat.mangareaderapp.viewmodel;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 
 import com.dinhtrongdat.mangareaderapp.R;
 import com.dinhtrongdat.mangareaderapp.adapter.BannerAdapter;
@@ -44,6 +53,8 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
     RecyclerView rcvItem;
     AppBarLayout appBar;
     TabLayout tabIndicater;
+    SearchView searchView;
+    ImageView btnSearch;
 
     /**
      * Danh sách quảng cáo, truyện.
@@ -68,6 +79,44 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
     private void initUI() {
         UploadBanner();
         UploadMangaItem();
+        Search();
+    }
+
+    private void Search(){
+        Animation rightAnim = AnimationUtils.loadAnimation(this,R.anim.right_anim);
+        searchView = findViewById(R.id.edtSearch);
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        searchView.setAnimation(rightAnim);
+
+        btnSearch = findViewById(R.id.img_search);
+        btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchView.setVisibility(View.VISIBLE);
+            }
+        });
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                mangaAdapter.getFilter().filter(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                mangaAdapter.getFilter().filter(newText);
+                return false;
+            }
+        });
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.search, menu);
+        return true;
     }
 
     /**

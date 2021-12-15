@@ -56,27 +56,39 @@
                     android:id="@+id/toolbar_main"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
-                    android:background="@color/background"
+                    android:background="#303030"
                     app:layout_collapseMode="pin">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/nenden"
+                        android:layout_centerHorizontal="true"/>
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginEnd="10dp">
-
+                        android:layout_height="match_parent">
                         <ImageView
-                            android:layout_width="100dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/nentrang"
-                            android:layout_centerHorizontal="true"/>
-
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
-                            android:src="@drawable/avt"
+                            android:id="@+id/img_search"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/icons8_search_32px"
                             android:layout_alignParentEnd="true"
-                            android:layout_marginTop="10dp"/>
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"/>
 
+                        <androidx.appcompat.widget.SearchView
+                            android:id="@+id/edtSearch"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="@drawable/bg_search"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginTop="3dp"
+                            app:queryHint="Search"
+                            android:padding="10dp"
+                            android:visibility="gone"/>
                     </RelativeLayout>
+
                 </androidx.appcompat.widget.Toolbar>
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 
