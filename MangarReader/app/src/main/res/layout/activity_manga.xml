@@ -32,7 +32,7 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:layout_marginTop="?attr/actionBarSize"
-                    android:background="#303030">
+                    android:background="@color/toolbar">
 
                     <androidx.appcompat.widget.SearchView
                         android:id="@+id/edtSearch"

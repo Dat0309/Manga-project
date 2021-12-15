@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.dinhtrongdat.mangareaderapp" >
+    package="com.dinhtrongdat.mangareaderapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -10,7 +10,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MangaReaderApp" >
+        android:theme="@style/Theme.MangaReaderApp">
+        <activity android:name=".viewmodel.FavoriteAct"></activity>
         <activity
             android:name=".viewmodel.MangaDetailsAct"
             android:exported="true" />
@@ -18,7 +19,7 @@
         <activity android:name=".viewmodel.RegisterAct" />
         <activity android:name=".viewmodel.MangaAct" />
         <activity android:name=".viewmodel.LoginAct" />
-        <activity android:name=".SplashScreen" >
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
