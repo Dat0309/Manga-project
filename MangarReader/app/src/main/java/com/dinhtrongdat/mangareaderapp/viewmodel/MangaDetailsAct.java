@@ -27,6 +27,7 @@ import java.util.List;
 public class MangaDetailsAct extends AppCompatActivity implements  ChapterAdapter.OnItemChapterClick {
 
     Manga manga;
+    BannerManga bannerManga;
 
     Button btnReadManga;
     ImageView btnBack, btnShare, btnFavorite ;
@@ -71,6 +72,7 @@ public class MangaDetailsAct extends AppCompatActivity implements  ChapterAdapte
     }
     private void LoadDetails(){
         manga = (Manga) getIntent().getSerializableExtra("manga");
+        bannerManga = (BannerManga) getIntent().getSerializableExtra("banner");
         if(manga != null)
         {
             Glide.with(this).load(manga.getImage()).into(ivPosterManga);
@@ -90,14 +92,37 @@ public class MangaDetailsAct extends AppCompatActivity implements  ChapterAdapte
             for(String cate : tag){
                 listTag.add(new Tag(cate));
             }
-
             tagAdapter = new TagAdapter(this, listTag);
             tagAdapter.notifyDataSetChanged();
             rcvTag.setLayoutManager(new GridLayoutManager(this, 2));
             rcvTag.setAdapter(tagAdapter);
 
             }
+        else if(bannerManga != null){
+            Glide.with(this).load(bannerManga.getImage()).into(ivPosterManga);
+            Glide.with(this).load(bannerManga.getBackdrop()).into(ivBannerManga);
+            tvNameManga.setText(bannerManga.getName().toString());
+            tvAuthor.setText(bannerManga.getAuthor().toString());
+            tvDescription.setText(bannerManga.getDescription().toString());
+            listChapter = bannerManga.getChapters();
+
+            chapterAdapter = new ChapterAdapter(this,listChapter, this);
+            chapterAdapter.notifyDataSetChanged();
+            rcvChapter.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
+            rcvChapter.setAdapter(chapterAdapter);
+
+            String[] tag = bannerManga.getCategory().split("/");
+            listTag = new ArrayList<>();
+            for(String cate : tag){
+                listTag.add(new Tag(cate));
+            }
+            tagAdapter = new TagAdapter(this, listTag);
+            tagAdapter.notifyDataSetChanged();
+            rcvTag.setLayoutManager(new GridLayoutManager(this, 2));
+            rcvTag.setAdapter(tagAdapter);
         }
+    }
+
 
     @Override
     public void onChapterItemClick(int clickedItemIndex) {

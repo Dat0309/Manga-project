@@ -157,22 +157,23 @@
     <androidx.cardview.widget.CardView
 
         android:layout_width="350dp"
-        android:layout_height="70dp"
+        android:layout_height="80dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="380dp"
-        app:cardCornerRadius="10dp"
-        app:cardBackgroundColor="#E0D8D8">
+        app:cardBackgroundColor="#E0D8D8"
+        app:cardCornerRadius="10dp">
+
         <TextView
             android:id="@+id/tv_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
             android:fontFamily="@font/poppins"
-            android:textStyle="normal"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"/>
+            android:textSize="10dp"
+            android:textStyle="normal" />
     </androidx.cardview.widget.CardView>
 
 
