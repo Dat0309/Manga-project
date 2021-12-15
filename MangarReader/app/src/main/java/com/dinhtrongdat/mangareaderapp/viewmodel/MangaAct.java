@@ -54,7 +54,6 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
     AppBarLayout appBar;
     TabLayout tabIndicater;
     SearchView searchView;
-    ImageView btnSearch;
 
     /**
      * Danh sách quảng cáo, truyện.
@@ -88,14 +87,6 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         searchView.setAnimation(rightAnim);
-
-        btnSearch = findViewById(R.id.img_search);
-        btnSearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                searchView.setVisibility(View.VISIBLE);
-            }
-        });
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override

@@ -31,7 +31,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:layout_marginTop="?attr/actionBarSize">
+                    android:layout_marginTop="?attr/actionBarSize"
+                    android:background="#303030">
+
+                    <androidx.appcompat.widget.SearchView
+                        android:id="@+id/edtSearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/bg_search"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        app:queryHint="Search"
+                        android:padding="10dp"/>
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="230dp">
@@ -68,25 +81,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <ImageView
-                            android:id="@+id/img_search"
+                            android:id="@+id/img_menu"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            android:src="@drawable/icons8_search_32px"
+                            android:src="@drawable/icons8_menu_24px_2"
                             android:layout_alignParentEnd="true"
                             android:layout_marginTop="10dp"
                             android:layout_marginEnd="10dp"/>
-
-                        <androidx.appcompat.widget.SearchView
-                            android:id="@+id/edtSearch"
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:background="@drawable/bg_search"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginEnd="10dp"
-                            android:layout_marginTop="3dp"
-                            app:queryHint="Search"
-                            android:padding="10dp"
-                            android:visibility="gone"/>
                     </RelativeLayout>
 
                 </androidx.appcompat.widget.Toolbar>
