@@ -1,6 +1,7 @@
 package com.dinhtrongdat.mangareaderapp.viewmodel;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,10 +15,13 @@ import com.bumptech.glide.Glide;
 import com.dinhtrongdat.mangareaderapp.R;
 import com.dinhtrongdat.mangareaderapp.adapter.ChapterAdapter;
 import com.dinhtrongdat.mangareaderapp.adapter.MangaAdapter;
+import com.dinhtrongdat.mangareaderapp.adapter.TagAdapter;
 import com.dinhtrongdat.mangareaderapp.model.BannerManga;
 import com.dinhtrongdat.mangareaderapp.model.Chapter;
 import com.dinhtrongdat.mangareaderapp.model.Manga;
+import com.dinhtrongdat.mangareaderapp.model.Tag;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MangaDetailsAct extends AppCompatActivity implements  ChapterAdapter.OnItemChapterClick {
@@ -28,14 +32,13 @@ public class MangaDetailsAct extends AppCompatActivity implements  ChapterAdapte
     ImageView btnBack, btnShare, btnFavorite ;
     ImageView ivPosterManga, ivBannerManga;
     TextView tvNameManga, tvAuthor,tvDescription;
-    View vType;
-    RecyclerView rcvChapter;
+    RecyclerView rcvChapter, rcvTag;
 
     ChapterAdapter chapterAdapter;
     List<Chapter> listChapter;
 
-
-
+    TagAdapter tagAdapter;
+    List<Tag> listTag ;
 
 
     @Override
@@ -54,9 +57,9 @@ public class MangaDetailsAct extends AppCompatActivity implements  ChapterAdapte
         ivBannerManga = findViewById(R.id.img_banner_manga);
         tvNameManga = findViewById(R.id.tv_name_manga);
         tvAuthor = findViewById(R.id.txt_author);
-        vType = findViewById(R.id.tv_type);
         tvDescription = findViewById(R.id.tv_description);
         rcvChapter = findViewById(R.id.rcv_chapter);
+        rcvTag = findViewById(R.id.rcv_tag);
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,7 +85,16 @@ public class MangaDetailsAct extends AppCompatActivity implements  ChapterAdapte
             rcvChapter.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
             rcvChapter.setAdapter(chapterAdapter);
 
+            String[] tag = manga.getCategory().split("/");
+            listTag = new ArrayList<>();
+            for(String cate : tag){
+                listTag.add(new Tag(cate));
+            }
 
+            tagAdapter = new TagAdapter(this, listTag);
+            tagAdapter.notifyDataSetChanged();
+            rcvTag.setLayoutManager(new GridLayoutManager(this, 2));
+            rcvTag.setAdapter(tagAdapter);
 
             }
         }
