@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -68,6 +69,14 @@ public class MangaDetailsAct extends AppCompatActivity implements  ChapterAdapte
                 finish();
             }
         });
+        btnReadManga.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MangaDetailsAct.this, ViewMangaAct.class);
+                intent.putExtra("chapter", listChapter.get(0));
+                startActivity(intent);
+            }
+        });
         LoadDetails();
     }
     private void LoadDetails(){
@@ -126,6 +135,9 @@ public class MangaDetailsAct extends AppCompatActivity implements  ChapterAdapte
 
     @Override
     public void onChapterItemClick(int clickedItemIndex) {
+        Intent intent = new Intent(MangaDetailsAct.this, ViewMangaAct.class);
+        intent.putExtra("chapter", listChapter.get(clickedItemIndex));
+        startActivity(intent);
 
     }
 }
