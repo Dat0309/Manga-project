@@ -94,6 +94,7 @@ public class MangaDetailsAct extends AppCompatActivity implements  ChapterAdapte
         tvDescription = findViewById(R.id.tv_description);
         rcvChapter = findViewById(R.id.rcv_chapter);
         rcvTag = findViewById(R.id.rcv_tag);
+        CheckFav();
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,6 +134,10 @@ public class MangaDetailsAct extends AppCompatActivity implements  ChapterAdapte
             }
         });
     }
+
+    /**
+     * Xuất chi tiết manga
+     */
     private void LoadDetails(){
         if(manga != null)
         {
@@ -173,6 +178,29 @@ public class MangaDetailsAct extends AppCompatActivity implements  ChapterAdapte
             rcvChapter.setAdapter(chapterAdapter);
 
             String[] tag = bannerManga.getCategory().split("/");
+            listTag = new ArrayList<>();
+            for(String cate : tag){
+                listTag.add(new Tag(cate));
+            }
+            tagAdapter = new TagAdapter(this, listTag);
+            tagAdapter.notifyDataSetChanged();
+            rcvTag.setLayoutManager(new GridLayoutManager(this, 2));
+            rcvTag.setAdapter(tagAdapter);
+        }
+        else if(favorite != null){
+            Glide.with(this).load(favorite.getImage()).into(ivPosterManga);
+            Glide.with(this).load(favorite.getBackdrop()).into(ivBannerManga);
+            tvNameManga.setText(favorite.getName().toString());
+            tvAuthor.setText(favorite.getAuthor().toString());
+            tvDescription.setText(favorite.getDescription().toString());
+            listChapter = favorite.getChapters();
+
+            chapterAdapter = new ChapterAdapter(this,listChapter, this);
+            chapterAdapter.notifyDataSetChanged();
+            rcvChapter.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
+            rcvChapter.setAdapter(chapterAdapter);
+
+            String[] tag = favorite.getCategory().split("/");
             listTag = new ArrayList<>();
             for(String cate : tag){
                 listTag.add(new Tag(cate));

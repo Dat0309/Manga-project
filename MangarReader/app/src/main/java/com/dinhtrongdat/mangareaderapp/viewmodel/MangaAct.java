@@ -95,6 +95,10 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
     private void NavSettup() {
         navigationView = findViewById(R.id.navbar);
         navigationView.setNavigationItemSelectedListener(this);
+
+        findViewById(R.id.img_menu).setOnClickListener(v->{
+            ShowNavigationBar();
+        });
     }
 
     private void Search(){
@@ -234,6 +238,13 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
         return true;
     }
 
+
+    /**
+     * Hàm định nghĩa phương thức hiện NavigationBar
+     */
+    private void ShowNavigationBar(){
+        drawerLayout.openDrawer(GravityCompat.END);
+    }
 
     /**
      * Lớp kế thừa TimerTask, định nghĩa phương thức xử lý tự động chạy của banner.
