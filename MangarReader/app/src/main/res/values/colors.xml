@@ -18,4 +18,5 @@
     <color name="color_round1">#F26719</color>
     <color name="color_round2">#FFC478</color>
     <color name="color_selected_bottom_nav">#DC933F</color>
+    <color name="bg_fav">#6988AB</color>
 </resources>

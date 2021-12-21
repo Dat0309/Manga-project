@@ -17,6 +17,8 @@
         <activity
             android:name=".viewmodel.MangaDetailsAct"
             android:exported="true" />
+        <activity android:name=".viewmodel.FavoriteAct"
+            android:exported="true"/>
         <activity android:name=".viewmodel.GoogleLoginAct" />
         <activity android:name=".viewmodel.RegisterAct" />
         <activity android:name=".viewmodel.MangaAct" />

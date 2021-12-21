@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
@@ -57,6 +59,7 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
     TabLayout tabIndicater;
     SearchView searchView;
     NavigationView navigationView;
+    DrawerLayout drawerLayout;
 
     /**
      * Danh sách quảng cáo, truyện.
@@ -73,6 +76,7 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manga);
+        drawerLayout = findViewById(R.id.drawerLayout);
         
         initUI();
 
@@ -213,9 +217,21 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
         startActivity(intent);
     }
 
+    /**
+     * SỰ kiện click chọn item trong navbar
+     * @param item
+     * @return
+     */
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        return false;
+        int id = item.getItemId();
+        switch (id){
+            case R.id.nav_fav:
+                startActivity(new Intent(MangaAct.this, FavoriteAct.class));
+                drawerLayout.closeDrawer(GravityCompat.END);
+                break;
+        }
+        return true;
     }
 
 

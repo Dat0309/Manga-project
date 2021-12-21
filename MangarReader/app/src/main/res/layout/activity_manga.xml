@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".viewmodel.MangaAct"
-    tools:openDrawer="end">
+    tools:openDrawer="end"
+    android:id="@+id/drawerLayout">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
