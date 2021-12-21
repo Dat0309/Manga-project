@@ -5,6 +5,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.dinhtrongdat.mangareaderapp.R;
@@ -18,6 +19,7 @@ public class ViewMangaAct extends AppCompatActivity implements View.OnClickListe
     TextView txtChapterName;
     View btnBack;
     Chapter chapter;
+    SeekBar seekBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +33,7 @@ public class ViewMangaAct extends AppCompatActivity implements View.OnClickListe
         txtChapterName = findViewById(R.id.txtCurrentChapter);
         btnBack = findViewById(R.id.chapter_back);
         txtChapterName.setText(chapter.getName());
-
+        seekBar = findViewById(R.id.SeekbarManga);
         fetchhLinks(chapter);
 
         btnBack.setOnClickListener(this);
@@ -53,8 +55,10 @@ public class ViewMangaAct extends AppCompatActivity implements View.OnClickListe
                 BookFlipPageTransformer bookFlipPageTransformer = new BookFlipPageTransformer();
                 bookFlipPageTransformer.setScaleAmountPercent(10f);
                 viewPager.setPageTransformer(true, bookFlipPageTransformer);
-                }
+                //seekBar.setMax(chap.getLinks().size());
+                seekBar.setProgress(seekBar.getProgress() + 1);
 
+            }
         }
     }
 }

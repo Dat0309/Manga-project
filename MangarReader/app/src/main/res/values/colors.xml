@@ -15,4 +15,6 @@
     <color name="btn_read_manga">#ED3232</color>
     <color name="color_line">#8B6D6D</color>
     <color name="color_textview">#54FFFFFF</color>
+    <color name="color_round1">#F26719</color>
+    <color name="color_round2">#FFC478</color>
 </resources>

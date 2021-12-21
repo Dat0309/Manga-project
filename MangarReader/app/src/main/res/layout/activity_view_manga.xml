@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -23,25 +23,41 @@
                 android:layout_height="30dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/ic_back" />
+
             <TextView
                 android:id="@+id/txtCurrentChapter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="60dp"
+                android:fontFamily="@font/poppins"
                 android:gravity="center_horizontal"
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_centerVertical="true"
-                android:fontFamily="@font/poppins"
-                android:layout_marginStart="50dp"
-                android:layout_marginEnd="60dp"/>
+                android:textStyle="bold" />
 
         </RelativeLayout>
 
     </androidx.appcompat.widget.Toolbar>
-
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+        <SeekBar
+            android:id="@+id/SeekbarManga"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:progress="3"
+            android:maxHeight="5dp"
+            android:progressDrawable="@drawable/custom_seekbar"
+            android:background="@drawable/custom_stroke"
+            android:thumb="@drawable/thumb_process_bar"
+            />
+    </LinearLayout>
+</RelativeLayout>
