@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -117,6 +118,18 @@ public class MangaDetailsAct extends AppCompatActivity implements  ChapterAdapte
                     AddToFavorite(user);
                 else
                     Toast.makeText(MangaDetailsAct.this, "Truyện đã tồn tại trong mục ưa thích", Toast.LENGTH_LONG).show();
+            }
+        });
+        btnShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.putExtra(Intent.EXTRA_TEXT, manga.getName());
+                intent.putExtra(Intent.EXTRA_SUBJECT, manga.getName());
+                intent.setType("text/plain");
+
+                Intent shareIntent = Intent.createChooser(intent, null);
+                startActivity(shareIntent);
             }
         });
     }
