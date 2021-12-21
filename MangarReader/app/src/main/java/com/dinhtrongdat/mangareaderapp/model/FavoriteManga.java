@@ -4,23 +4,25 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * Lớp Manga định nghĩa các truyện manga
+ * Lớp Favorite định nghĩa các truyện được yêu thích của người dùng
  */
-public class Manga implements Serializable {
-    private String Name, Image, Category, Description, Author, Backdrop;
+public class FavoriteManga implements Serializable {
+
+    private String Name, Image, Category, Description, Author, Backdrop, Uid;
     List<Chapter> Chapters;
 
-    public Manga() {
+    public FavoriteManga() {
     }
 
-    public Manga(String name, String image, String category, String description, String author, String backdrop, List<Chapter> chapters) {
+    public FavoriteManga(String name, String image, String category, String description, String author, String backdrop, String uid, List<Chapter> chapters) {
         Name = name;
         Image = image;
         Category = category;
         Description = description;
-        Chapters = chapters;
         Author = author;
         Backdrop = backdrop;
+        Uid = uid;
+        Chapters = chapters;
     }
 
     public String getName() {
@@ -47,14 +49,6 @@ public class Manga implements Serializable {
         Category = category;
     }
 
-    public List<Chapter> getChapters() {
-        return Chapters;
-    }
-
-    public void setChapters(List<Chapter> chapters) {
-        Chapters = chapters;
-    }
-
     public String getDescription() {
         return Description;
     }
@@ -77,5 +71,21 @@ public class Manga implements Serializable {
 
     public void setBackdrop(String backdrop) {
         Backdrop = backdrop;
+    }
+
+    public String getUid() {
+        return Uid;
+    }
+
+    public void setUid(String uid) {
+        Uid = uid;
+    }
+
+    public List<Chapter> getChapters() {
+        return Chapters;
+    }
+
+    public void setChapters(List<Chapter> chapters) {
+        Chapters = chapters;
     }
 }

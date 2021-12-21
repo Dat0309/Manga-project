@@ -11,8 +11,8 @@
     <ImageView
         android:id="@+id/img_logo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/nentrang"
+        android:layout_height="match_parent"
+        android:src="@drawable/logo2"
         android:layout_gravity="center"
         android:transitionName="logo_trans"/>
 </RelativeLayout>

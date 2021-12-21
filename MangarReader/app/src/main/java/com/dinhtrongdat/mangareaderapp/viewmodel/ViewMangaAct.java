@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.dinhtrongdat.mangareaderapp.R;
 import com.dinhtrongdat.mangareaderapp.adapter.MyViewPagerAdapter;
@@ -43,6 +44,7 @@ public class ViewMangaAct extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()){
             case  R.id.chapter_back:
+                Toast.makeText(this, "BACK", Toast.LENGTH_SHORT).show();
                 finish();
                 break;
         }

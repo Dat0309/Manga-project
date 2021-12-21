@@ -13,6 +13,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -24,6 +25,7 @@ import com.dinhtrongdat.mangareaderapp.adapter.MangaAdapter;
 import com.dinhtrongdat.mangareaderapp.model.BannerManga;
 import com.dinhtrongdat.mangareaderapp.model.Manga;
 import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -38,7 +40,7 @@ import java.util.TimerTask;
 
 import dmax.dialog.SpotsDialog;
 
-public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMangaClick {
+public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMangaClick, NavigationView.OnNavigationItemSelectedListener {
 
     /**
      * Adapter
@@ -54,6 +56,7 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
     AppBarLayout appBar;
     TabLayout tabIndicater;
     SearchView searchView;
+    NavigationView navigationView;
 
     /**
      * Danh sách quảng cáo, truyện.
@@ -79,6 +82,15 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
         UploadBanner();
         UploadMangaItem();
         Search();
+        NavSettup();
+    }
+
+    /**
+     * Hook navbar
+     */
+    private void NavSettup() {
+        navigationView = findViewById(R.id.navbar);
+        navigationView.setNavigationItemSelectedListener(this);
     }
 
     private void Search(){
@@ -199,6 +211,11 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
         Intent intent = new Intent(MangaAct.this, MangaDetailsAct.class);
         intent.putExtra("manga",Mangas.get(clickedItemIndex));
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        return false;
     }
 
 

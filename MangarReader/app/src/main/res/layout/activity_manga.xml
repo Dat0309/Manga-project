@@ -69,13 +69,12 @@
                     android:id="@+id/toolbar_main"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
-                    android:background="#303030"
+                    android:background="@color/toolbar"
                     app:layout_collapseMode="pin">
-
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/nenden"
+                        android:src="@drawable/logo2"
                         android:layout_centerHorizontal="true"/>
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -116,6 +115,7 @@
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navbar"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="end"

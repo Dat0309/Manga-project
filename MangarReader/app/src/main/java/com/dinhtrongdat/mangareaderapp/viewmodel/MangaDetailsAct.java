@@ -1,5 +1,6 @@
 package com.dinhtrongdat.mangareaderapp.viewmodel;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.dinhtrongdat.mangareaderapp.R;
@@ -19,34 +21,63 @@ import com.dinhtrongdat.mangareaderapp.adapter.MangaAdapter;
 import com.dinhtrongdat.mangareaderapp.adapter.TagAdapter;
 import com.dinhtrongdat.mangareaderapp.model.BannerManga;
 import com.dinhtrongdat.mangareaderapp.model.Chapter;
+import com.dinhtrongdat.mangareaderapp.model.FavoriteManga;
 import com.dinhtrongdat.mangareaderapp.model.Manga;
 import com.dinhtrongdat.mangareaderapp.model.Tag;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MangaDetailsAct extends AppCompatActivity implements  ChapterAdapter.OnItemChapterClick {
+public class MangaDetailsAct extends AppCompatActivity implements  ChapterAdapter.OnItemChapterClick{
 
+    /**
+     * Model
+     */
     Manga manga;
     BannerManga bannerManga;
+    FavoriteManga favorite;
+    boolean IS_ADD = false;
 
+    /**
+     * View
+     */
     Button btnReadManga;
     ImageView btnBack, btnShare, btnFavorite ;
     ImageView ivPosterManga, ivBannerManga;
     TextView tvNameManga, tvAuthor,tvDescription;
     RecyclerView rcvChapter, rcvTag;
 
+    /**
+     * Adapter
+     */
     ChapterAdapter chapterAdapter;
     List<Chapter> listChapter;
-
     TagAdapter tagAdapter;
     List<Tag> listTag ;
 
+    /**
+     * Database
+     */
+    DatabaseReference reference;
+    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manga_details);
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        favorite = (FavoriteManga) getIntent().getSerializableExtra("fav");
+        manga = (Manga) getIntent().getSerializableExtra("manga");
+        bannerManga = (BannerManga) getIntent().getSerializableExtra("banner");
 
         initUI();
     }
@@ -78,10 +109,18 @@ public class MangaDetailsAct extends AppCompatActivity implements  ChapterAdapte
             }
         });
         LoadDetails();
+
+        btnFavorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!IS_ADD)
+                    AddToFavorite(user);
+                else
+                    Toast.makeText(MangaDetailsAct.this, "Truyện đã tồn tại trong mục ưa thích", Toast.LENGTH_LONG).show();
+            }
+        });
     }
     private void LoadDetails(){
-        manga = (Manga) getIntent().getSerializableExtra("manga");
-        bannerManga = (BannerManga) getIntent().getSerializableExtra("banner");
         if(manga != null)
         {
             Glide.with(this).load(manga.getImage()).into(ivPosterManga);
@@ -132,6 +171,67 @@ public class MangaDetailsAct extends AppCompatActivity implements  ChapterAdapte
         }
     }
 
+    /**
+     * Hàm kiểm tra truyện có nằm trong danh sách yêu thích của người dùng không
+     */
+    private void CheckFav(){
+        FavoriteManga fav;
+        if(manga != null)
+            fav = new FavoriteManga(manga.getName(), manga.getImage(), manga.getCategory(), manga.getDescription(), manga.getAuthor(),manga.getBackdrop(), user.getUid(), manga.getChapters());
+        else
+            fav = favorite;
+
+        reference = FirebaseDatabase.getInstance().getReference("favorite");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot data : snapshot.getChildren()){
+                    FavoriteManga favorite = data.getValue(FavoriteManga.class);
+                    if(favorite.getUid().compareTo(fav.getUid())==0){
+                        if(String.valueOf(favorite.getName()).compareTo(String.valueOf(fav.getName())) == 0){
+                            IS_ADD = true;
+                            btnFavorite.setImageResource(R.drawable.ic_favorite_red);
+                            break;
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    /**
+     * Hàm thêm truyện vào danh sách truyện yêu thích của người dùng
+     * @param user tài khoản người dùng
+     */
+    private void AddToFavorite(FirebaseUser user){
+        FavoriteManga fav;
+        if(manga != null)
+            fav = new FavoriteManga(manga.getName(), manga.getImage(), manga.getCategory(), manga.getDescription(), manga.getAuthor(),manga.getBackdrop(), user.getUid(), manga.getChapters());
+        else
+            fav = favorite;
+
+        reference = FirebaseDatabase.getInstance().getReference("favorite");
+        reference.push().setValue(fav).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful()){
+                    Toast.makeText(MangaDetailsAct.this, "Đã thêm vào mục yêu thích", Toast.LENGTH_SHORT).show();
+                    IS_ADD = true;
+                    btnFavorite.setImageResource(R.drawable.ic_favorite_red);
+                }
+                else{
+                    Toast.makeText(MangaDetailsAct.this, "Thất bại", Toast.LENGTH_SHORT).show();
+                    IS_ADD = false;
+                    btnFavorite.setImageResource(R.drawable.ic_favorite);
+                }
+            }
+        });
+    }
 
     @Override
     public void onChapterItemClick(int clickedItemIndex) {

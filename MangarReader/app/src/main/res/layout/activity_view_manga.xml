@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -26,7 +26,7 @@
 
             <TextView
                 android:id="@+id/txtCurrentChapter"
-                android:layout_width="match_parent"
+                android:layout_width="270dp"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="50dp"
@@ -36,28 +36,39 @@
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
-
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/logo2"
+                android:layout_alignParentEnd="true"/>
         </RelativeLayout>
 
     </androidx.appcompat.widget.Toolbar>
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewPager"
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal">
-        <SeekBar
-            android:id="@+id/SeekbarManga"
+        android:layout_height="match_parent">
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:progress="3"
-            android:maxHeight="5dp"
-            android:progressDrawable="@drawable/custom_seekbar"
-            android:background="@drawable/custom_stroke"
-            android:thumb="@drawable/thumb_process_bar"
-            />
-    </LinearLayout>
-</RelativeLayout>
+            android:layout_height="match_parent"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+            <SeekBar
+                android:id="@+id/SeekbarManga"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:progress="3"
+                android:maxHeight="5dp"
+                android:progressDrawable="@drawable/custom_seekbar"
+                android:background="@drawable/custom_stroke"
+                android:thumb="@drawable/thumb_process_bar"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

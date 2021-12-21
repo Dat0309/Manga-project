@@ -18,7 +18,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/imgBack_frg"
@@ -28,10 +28,10 @@
                 android:src="@drawable/ic_baseline_arrow_back_ios_24" />
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_centerInParent="true"
-                android:src="@drawable/nenden" />
+                android:src="@drawable/logo2" />
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
 

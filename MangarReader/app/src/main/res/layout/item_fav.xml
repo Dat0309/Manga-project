@@ -31,7 +31,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tv_type_fav"
+                android:id="@+id/tv_author_fav"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
@@ -45,7 +45,7 @@
                 android:layout_marginTop="4dp"
                 android:background="@drawable/ic_tar"
                 android:backgroundTint="@color/color_selected_bottom_nav"
-                app:layout_constraintLeft_toRightOf="@id/tv_type_fav"
+                app:layout_constraintLeft_toRightOf="@id/tv_author_fav"
                 app:layout_constraintTop_toBottomOf="@id/tv_title_fav" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

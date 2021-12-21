@@ -2,6 +2,9 @@ package com.dinhtrongdat.mangareaderapp.model;
 
 import java.io.Serializable;
 
+/**
+ * Lớp Tag định nghĩa các thể loại truyện
+ */
 public class Tag implements Serializable {
     private String tag;
 

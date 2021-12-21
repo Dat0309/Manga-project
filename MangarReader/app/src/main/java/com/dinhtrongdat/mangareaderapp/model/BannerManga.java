@@ -3,6 +3,9 @@ package com.dinhtrongdat.mangareaderapp.model;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * Lớp BannerManga định nghĩa các truyện đang được quảng cáo
+ */
 public class BannerManga implements Serializable {
     private String Name, Image, Category, Description, Author, Backdrop;
     private List<Chapter> Chapters;
