@@ -1,6 +1,7 @@
 package com.dinhtrongdat.mangareaderapp.viewmodel;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
@@ -13,6 +14,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,26 +22,36 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.dinhtrongdat.mangareaderapp.R;
 import com.dinhtrongdat.mangareaderapp.adapter.BannerAdapter;
 import com.dinhtrongdat.mangareaderapp.adapter.MangaAdapter;
 import com.dinhtrongdat.mangareaderapp.model.BannerManga;
 import com.dinhtrongdat.mangareaderapp.model.Manga;
+import com.dinhtrongdat.mangareaderapp.model.User;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import dmax.dialog.SpotsDialog;
 
 public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMangaClick, NavigationView.OnNavigationItemSelectedListener {
@@ -60,6 +72,9 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
     SearchView searchView;
     NavigationView navigationView;
     DrawerLayout drawerLayout;
+    CircleImageView imgUser;
+    TextView txtFullName, txtEmail;
+    ImageView imgUpload;
 
     /**
      * Danh sách quảng cáo, truyện.
@@ -71,13 +86,16 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
      * Database
      */
     DatabaseReference databaseReference;
+    FirebaseAuth auth;
+    FirebaseDatabase database;
+    FirebaseStorage storage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manga);
         drawerLayout = findViewById(R.id.drawerLayout);
-        
+
         initUI();
 
     }
@@ -90,19 +108,76 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
     }
 
     /**
-     * Hook navbar
+     * Hook item navbar
      */
     private void NavSettup() {
         navigationView = findViewById(R.id.navbar);
+        imgUser = navigationView.getHeaderView(0).findViewById(R.id.img_user);
+        txtFullName = navigationView.getHeaderView(0).findViewById(R.id.txt_nav_name);
+        txtEmail = navigationView.getHeaderView(0).findViewById(R.id.txt_user_name);
+        imgUpload = navigationView.getHeaderView(0).findViewById(R.id.img_upload);
+
         navigationView.setNavigationItemSelectedListener(this);
 
-        findViewById(R.id.img_menu).setOnClickListener(v->{
+        database = FirebaseDatabase.getInstance();
+        auth = FirebaseAuth.getInstance();
+        storage = FirebaseStorage.getInstance();
+
+        // Fetch data user in firebase
+        database.getReference().child("Users").child(auth.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    User user = snapshot.getValue(User.class);
+                    Glide.with(MangaAct.this).load(user.getAvatar()).into(imgUser);
+                    txtFullName.setText(user.getName());
+                    txtEmail.setText(user.getUserName());
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        imgUpload.setOnClickListener(v->{
+            Intent intent = new Intent();
+            intent.setAction(Intent.ACTION_GET_CONTENT);
+            intent.setType("image/*");
+            startActivityForResult(intent,11);
+        });
+
+        findViewById(R.id.img_menu).setOnClickListener(v -> {
             ShowNavigationBar();
         });
     }
 
-    private void Search(){
-        Animation rightAnim = AnimationUtils.loadAnimation(this,R.anim.right_anim);
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(data.getData()!=null){
+            Uri uri = data.getData();
+            imgUser.setImageURI(uri);
+
+            final StorageReference reference = storage.getReference().child("avatar_user").child(auth.getUid());
+            reference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    Toast.makeText(MangaAct.this, "Đã cập nhật ảnh đại diện", Toast.LENGTH_SHORT).show();
+                    reference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            database.getReference().child("Users").child(auth.getUid()).child("avatar").setValue(uri.toString());
+                        }
+                    });
+                }
+            });
+        }
+    }
+
+    private void Search() {
+        Animation rightAnim = AnimationUtils.loadAnimation(this, R.anim.right_anim);
         searchView = findViewById(R.id.edtSearch);
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
@@ -146,7 +221,7 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot data : snapshot.getChildren()){
+                for (DataSnapshot data : snapshot.getChildren()) {
                     Manga manga = data.getValue(Manga.class);
                     String[] category = manga.getCategory().split("/");
                     Mangas.add(manga);
@@ -181,7 +256,7 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot data : snapshot.getChildren()){
+                for (DataSnapshot data : snapshot.getChildren()) {
                     BannerManga bannerManga = data.getValue(BannerManga.class);
                     String[] category = bannerManga.getCategory().split("/");
                     Banners.add(bannerManga);
@@ -212,27 +287,35 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
 
     /**
      * Sự kiện click chọn manga
+     *
      * @param clickedItemIndex
      */
     @Override
     public void onMangaItemClick(int clickedItemIndex) {
         Intent intent = new Intent(MangaAct.this, MangaDetailsAct.class);
-        intent.putExtra("manga",Mangas.get(clickedItemIndex));
+        intent.putExtra("manga", Mangas.get(clickedItemIndex));
         startActivity(intent);
     }
 
     /**
      * SỰ kiện click chọn item trong navbar
+     * Favorite: Xuất danh sách truyện ưa thích
+     * Logout: Đăng xuất khỏi ứng dụng
      * @param item
      * @return
      */
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-        switch (id){
+        switch (id) {
             case R.id.nav_fav:
                 startActivity(new Intent(MangaAct.this, FavoriteAct.class));
                 drawerLayout.closeDrawer(GravityCompat.END);
+                break;
+            case R.id.nav_logout:
+                auth.signOut();
+                finish();
+                startActivity(new Intent(MangaAct.this, LoginAct.class));
                 break;
         }
         return true;
@@ -242,14 +325,14 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
     /**
      * Hàm định nghĩa phương thức hiện NavigationBar
      */
-    private void ShowNavigationBar(){
+    private void ShowNavigationBar() {
         drawerLayout.openDrawer(GravityCompat.END);
     }
 
     /**
      * Lớp kế thừa TimerTask, định nghĩa phương thức xử lý tự động chạy của banner.
      */
-    public class AutoSlider extends TimerTask{
+    public class AutoSlider extends TimerTask {
 
         List<BannerManga> list;
 
@@ -259,10 +342,10 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
 
         @Override
         public void run() {
-            MangaAct.this.runOnUiThread(() ->{
-                if(viewPager.getCurrentItem() < list.size()-1){
-                    viewPager.setCurrentItem(viewPager.getCurrentItem() +1);
-                }else{
+            MangaAct.this.runOnUiThread(() -> {
+                if (viewPager.getCurrentItem() < list.size() - 1) {
+                    viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
+                } else {
                     viewPager.setCurrentItem(0);
                 }
             });

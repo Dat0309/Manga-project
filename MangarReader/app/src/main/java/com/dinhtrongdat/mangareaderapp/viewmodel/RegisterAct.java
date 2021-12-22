@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.dinhtrongdat.mangareaderapp.R;
+import com.dinhtrongdat.mangareaderapp.model.User;
 import com.github.ybq.android.spinkit.sprite.Sprite;
 import com.github.ybq.android.spinkit.style.Wave;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -27,6 +28,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterAct extends AppCompatActivity implements View.OnClickListener {
 
@@ -34,11 +36,16 @@ public class RegisterAct extends AppCompatActivity implements View.OnClickListen
      * Defind project variable
      */
     ImageView imgLogo;
-    TextInputLayout edtUser, edtPass;
+    TextInputLayout edtUser, edtPass, edtFullName;
     Button btnSignup;
     ImageButton btnBack;
     ProgressBar progressBar;
     LinearLayout linear;
+
+    /**
+     * Database
+     */
+    FirebaseDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +60,7 @@ public class RegisterAct extends AppCompatActivity implements View.OnClickListen
         imgLogo = findViewById(R.id.img_logo);
         edtUser = findViewById(R.id.username);
         edtPass = findViewById(R.id.password);
+        edtFullName = findViewById(R.id.fullname);
         btnSignup = findViewById(R.id.btn_register);
         progressBar = findViewById(R.id.progres);
         linear = findViewById(R.id.linear_btn);
@@ -79,12 +87,18 @@ public class RegisterAct extends AppCompatActivity implements View.OnClickListen
 
         String strEmail = edtUser.getEditText().getText().toString().trim();
         String strPass = edtPass.getEditText().getText().toString().trim();
+        String fullName = edtFullName.getEditText().getText().toString().trim();
+        String uriImage = "https://firebasestorage.googleapis.com/v0/b/manga-ctk43.appspot.com/o/avatar_user%2Fdefaultuser.png?alt=media&token=6e7f08a6-aeed-4ff3-8918-8a9ee7d95cd9";
 
         FirebaseAuth auth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance();
         auth.createUserWithEmailAndPassword(strEmail, strPass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
+                    User user = new User(strEmail, strPass, fullName, uriImage);
+                    String id = task.getResult().getUser().getUid();
+                    database.getReference().child("Users").child(id).setValue(user);
                     Toast.makeText(RegisterAct.this, "Success", Toast.LENGTH_SHORT).show();
 
                     Intent intent = new Intent(RegisterAct.this, LoginAct.class);

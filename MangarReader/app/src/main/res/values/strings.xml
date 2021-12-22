@@ -22,4 +22,5 @@
     <string name="text_chapter">Chapter</string>
     <string name="text_description">Mô tả</string>
     <string name="action_search">Tìm kiếm</string>
+    <string name="fullname">Tên đầy đủ</string>
 </resources>
