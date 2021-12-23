@@ -38,7 +38,7 @@ public class LoginAct extends AppCompatActivity implements View.OnClickListener 
      */
     ImageView imgLogo;
     TextInputLayout edtUser, edtPass;
-    Button btnSignin, btnSignup;
+    Button btnSignin, btnSignup, btnForgot;
     ImageButton btnFacebook, btnGoogle;
     ProgressBar progressBar;
     LinearLayout linear;
@@ -62,6 +62,7 @@ public class LoginAct extends AppCompatActivity implements View.OnClickListener 
         edtPass = findViewById(R.id.password);
         btnSignin = findViewById(R.id.btn_signin);
         btnSignup = findViewById(R.id.btn_signup);
+        btnForgot = findViewById(R.id.btn_forgot_pass);
         progressBar = findViewById(R.id.progres);
         linear = findViewById(R.id.linear_btn);
         btnFacebook = findViewById(R.id.btn_facebook);
@@ -81,6 +82,7 @@ public class LoginAct extends AppCompatActivity implements View.OnClickListener 
         btnSignin.setOnClickListener(this);
         btnSignup.setOnClickListener(this);
         btnGoogle.setOnClickListener(this);
+        btnForgot.setOnClickListener(this);
     }
 
     /**
@@ -202,6 +204,13 @@ public class LoginAct extends AppCompatActivity implements View.OnClickListener 
         finish();
     }
 
+    /**
+     * Chuyển màn hình quên mật khẩu
+     */
+    private void ForgotPass() {
+        startActivity(new Intent(LoginAct.this, ForgotAct.class));
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -213,6 +222,9 @@ public class LoginAct extends AppCompatActivity implements View.OnClickListener 
                 break;
             case R.id.btn_google:
                 SignInWithGoogle();
+                break;
+            case R.id.btn_forgot_pass:
+                ForgotPass();
                 break;
         }
     }

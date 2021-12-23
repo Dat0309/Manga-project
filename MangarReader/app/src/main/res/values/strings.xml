@@ -23,4 +23,8 @@
     <string name="text_description">Mô tả</string>
     <string name="action_search">Tìm kiếm</string>
     <string name="fullname">Tên đầy đủ</string>
+    <string name="send">Xác nhận</string>
+    <string name="forgot_title">Quên mật khẩu?</string>
+    <string name="forgot_des">Vui lòng nhập Gmail</string>
+    <string name="back_to_login">Quay lại Đăng nhập</string>
 </resources>
