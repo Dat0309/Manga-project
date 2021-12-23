@@ -23,4 +23,6 @@
     <string name="text_description">Mô tả</string>
     <string name="action_search">Tìm kiếm</string>
     <string name="fullname">Tên đầy đủ</string>
+    <string name="name_rate">Đánh giá</string>
+    <string name="txt_rate">Hãy nhận xét !</string>
 </resources>

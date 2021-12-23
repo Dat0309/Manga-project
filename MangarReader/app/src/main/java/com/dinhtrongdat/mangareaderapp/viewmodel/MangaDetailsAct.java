@@ -6,12 +6,19 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,6 +47,7 @@ import java.util.List;
 
 public class MangaDetailsAct extends AppCompatActivity implements  ChapterAdapter.OnItemChapterClick{
 
+    float rating = 0;
     /**
      * Model
      */
@@ -52,10 +60,11 @@ public class MangaDetailsAct extends AppCompatActivity implements  ChapterAdapte
      * View
      */
     Button btnReadManga;
-    ImageView btnBack, btnShare, btnFavorite ;
+    ImageView btnBack, btnShare, btnFavorite, btnRate;
     ImageView ivPosterManga, ivBannerManga;
     TextView tvNameManga, tvAuthor,tvDescription;
     RecyclerView rcvChapter, rcvTag;
+
 
     /**
      * Adapter
@@ -94,6 +103,7 @@ public class MangaDetailsAct extends AppCompatActivity implements  ChapterAdapte
         tvDescription = findViewById(R.id.tv_description);
         rcvChapter = findViewById(R.id.rcv_chapter);
         rcvTag = findViewById(R.id.rcv_tag);
+        btnRate = findViewById(R.id.btn_rate);
         CheckFav();
 
         btnBack.setOnClickListener(new View.OnClickListener() {
@@ -121,6 +131,7 @@ public class MangaDetailsAct extends AppCompatActivity implements  ChapterAdapte
                     Toast.makeText(MangaDetailsAct.this, "Truyện đã tồn tại trong mục ưa thích", Toast.LENGTH_LONG).show();
             }
         });
+
         btnShare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -133,7 +144,63 @@ public class MangaDetailsAct extends AppCompatActivity implements  ChapterAdapte
                 startActivity(shareIntent);
             }
         });
+        btnRate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                OpenDiaLogRateManga(Gravity.BOTTOM);
+            }
+        });
     }
+    /**
+     * Hiện rate_manga (Chỗ này vừa hiện ra dialog vừa lấy số lượng)
+     */
+    private void OpenDiaLogRateManga(int gravity){
+        // hiện thị dialog + set vị trí, size của dialog
+        final Dialog dialog = new Dialog(MangaDetailsAct.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.rate_manga);
+        Window window = dialog.getWindow();
+        if(window == null){
+            return;
+        }
+        window.setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                WindowManager.LayoutParams.WRAP_CONTENT);
+        window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        WindowManager.LayoutParams windowA = window.getAttributes();
+        windowA.gravity = gravity;
+        window.setAttributes(windowA);
+
+        View btnBack = (View) dialog.findViewById(R.id.btn_back_rate);
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+// Lấy số lượng và gửi đi
+        RatingBar ratingStar = (RatingBar) dialog.findViewById(R.id.ratingStar);
+        ratingStar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
+                rating = ratingBar.getRating(); // Lấy số lượng
+
+                }
+        });
+        View btnSend =(View) dialog.findViewById(R.id.btn_send);
+        btnSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MangaDetailsAct.this, String.valueOf(rating), Toast.LENGTH_SHORT).show(); // Gửi số lượng lên datebase rồi lưu
+            }
+        });
+        dialog.show();
+
+    }
+    /**
+     * Lấy số lượng Star
+     */
+
 
     /**
      * Xuất chi tiết manga

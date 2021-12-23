@@ -35,7 +35,9 @@ public class ViewMangaAct extends AppCompatActivity implements View.OnClickListe
         btnBack = findViewById(R.id.chapter_back);
         txtChapterName.setText(chapter.getName());
         seekBar = findViewById(R.id.SeekbarManga);
+
         fetchhLinks(chapter);
+
 
         btnBack.setOnClickListener(this);
     }
@@ -57,9 +59,7 @@ public class ViewMangaAct extends AppCompatActivity implements View.OnClickListe
                 BookFlipPageTransformer bookFlipPageTransformer = new BookFlipPageTransformer();
                 bookFlipPageTransformer.setScaleAmountPercent(10f);
                 viewPager.setPageTransformer(true, bookFlipPageTransformer);
-                //seekBar.setMax(chap.getLinks().size());
-                seekBar.setProgress(seekBar.getProgress() + 1);
-
+                
             }
         }
     }
