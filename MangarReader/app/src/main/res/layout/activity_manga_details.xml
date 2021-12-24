@@ -63,6 +63,7 @@
                         android:textStyle="bold" />
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView_Name2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -80,6 +81,41 @@
                         android:textStyle="normal" />
 
                 </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cardView_Name2"
+                    android:layout_marginTop="5dp"
+                    app:cardBackgroundColor="#A8000000">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/num_rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:fontFamily="@font/poppins_bold"
+                            android:text="1.5"
+                            android:textColor="@color/white"
+                            android:textSize="16dp"
+                            android:layout_marginTop="1dp"
+                            android:textStyle="normal" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_marginTop="1dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_star" />
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
 
 
             </RelativeLayout>
@@ -111,7 +147,7 @@
         android:id="@+id/btn_read_manga"
         android:layout_width="120dp"
         android:layout_height="40dp"
-        android:layout_marginLeft="55dp"
+        android:layout_marginLeft="40dp"
         android:layout_marginTop="302dp"
         android:background="@drawable/custom_btn_read_manga"
         android:text="@string/btn_read"
@@ -136,13 +172,21 @@
         android:layout_marginTop="358dp"
         android:background="@color/color_line" />
 
+    <ImageView
+        android:id="@+id/btn_rate"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="269dp"
+        android:layout_marginTop="310dp"
+        android:src="@drawable/ic_baseline_star_border_24" />
+
 
     <ImageView
         android:id="@+id/btn_favorite"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginLeft="310dp"
-        android:layout_marginTop="310dp"
+        android:layout_marginLeft="312dp"
+        android:layout_marginTop="313dp"
         android:src="@drawable/ic_favorite" />
 
 
@@ -150,9 +194,10 @@
         android:id="@+id/btn_share"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginLeft="350dp"
-        android:layout_marginTop="310dp"
+        android:layout_marginLeft="352dp"
+        android:layout_marginTop="313dp"
         android:src="@drawable/ic_share" />
+
 
     <androidx.cardview.widget.CardView
 
