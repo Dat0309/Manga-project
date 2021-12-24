@@ -99,7 +99,7 @@
                             android:layout_marginStart="5dp"
                             android:layout_marginEnd="5dp"
                             android:fontFamily="@font/poppins_bold"
-                            android:text="1.5"
+                            android:text="0.0"
                             android:textColor="@color/white"
                             android:textSize="16dp"
                             android:layout_marginTop="1dp"

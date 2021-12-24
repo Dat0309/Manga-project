@@ -25,4 +25,9 @@
     <string name="fullname">Tên đầy đủ</string>
     <string name="name_rate">Đánh giá</string>
     <string name="txt_rate">Hãy nhận xét !</string>
+    <string name="forgot_title">Quên mật khẩu?</string>
+    <string name="forgot_des">Điền Gmail của tài khoản</string>
+    <string name="back_to_login">Quay lại đăng nhập</string>
+    <string name="send">Xác nhận</string>
+    <string name="nhanxet">Nhận xét</string>
 </resources>
