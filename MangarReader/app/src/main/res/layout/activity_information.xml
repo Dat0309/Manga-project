@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_fav"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/toolbar"
+        app:layout_collapseMode="pin">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imgBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_baseline_arrow_back_ios_24" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/logo2" />
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+            <TextView
+                android:gravity="center"
+                android:layout_width="350dp"
+                android:layout_height="70dp"
+                android:text="THÔNG TIN NGƯỜI DÙNG"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="@color/red_dark"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="bottom">
+            <TextView
+                android:textSize="20dp"
+                android:padding="5dp"
+                android:layout_margin="10dp"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Ảnh đại diện:"/>
+            <ImageView
+                android:layout_margin="10dp"
+                android:id="@+id/iv_avt_info"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/avt2"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+
+                android:textSize="20dp"
+                android:padding="5dp"
+                android:layout_margin="10dp"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Gmail:"/>
+            <TextView
+                android:id="@+id/txtGmail"
+                android:textSize="20dp"
+                android:padding="5dp"
+                android:layout_margin="10dp"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="alo1234@gmail.com"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+
+                android:textSize="20dp"
+                android:padding="5dp"
+                android:layout_margin="10dp"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Tên đầy đủ:"/>
+            <EditText
+                android:id="@+id/txtFullName"
+                android:textSize="20dp"
+                android:padding="5dp"
+                android:layout_margin="10dp"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="Kim Thị Chuối"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+
+                android:textSize="20dp"
+                android:padding="5dp"
+                android:layout_margin="10dp"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Mật khẩu:"/>
+            <TextView
+                android:id="@+id/txtPass"
+                android:textSize="20dp"
+                android:padding="5dp"
+                android:layout_margin="10dp"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="KimThiChuoi123"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+            <Button
+                android:id="@+id/btnClick"
+                android:layout_width="200dp"
+                android:layout_height="70dp"
+                android:text="Lưu thay đổi"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:backgroundTint="@color/red_dark"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

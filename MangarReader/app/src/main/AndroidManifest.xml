@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MangaReaderApp">
         <activity
+            android:name=".viewmodel.PasswordAct"
+            android:exported="false" />
+        <activity
+            android:name=".viewmodel.InformationAct"
+            android:exported="true"></activity>
+        <activity
             android:name=".viewmodel.ViewMangaAct"
             android:exported="true" />
         <activity
