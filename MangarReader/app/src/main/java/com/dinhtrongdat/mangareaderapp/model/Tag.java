@@ -8,6 +8,9 @@ import java.io.Serializable;
 public class Tag implements Serializable {
     private String tag;
 
+    public Tag() {
+    }
+
     public Tag(String tag) {
         this.tag = tag;
     }

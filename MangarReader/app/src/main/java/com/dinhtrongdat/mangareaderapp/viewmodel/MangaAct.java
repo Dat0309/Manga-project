@@ -345,6 +345,10 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
                 finish();
                 startActivity(new Intent(MangaAct.this, LoginAct.class));
                 break;
+            case R.id.nav_type:
+                startActivity(new Intent(MangaAct.this, CategoryAct.class));
+                drawerLayout.closeDrawer(GravityCompat.END);
+                break;
         }
         return true;
     }
