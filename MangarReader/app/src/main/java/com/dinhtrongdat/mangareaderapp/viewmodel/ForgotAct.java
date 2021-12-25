@@ -1,6 +1,5 @@
 package com.dinhtrongdat.mangareaderapp.viewmodel;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -9,14 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.dinhtrongdat.mangareaderapp.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.Objects;
 
 public class ForgotAct extends AppCompatActivity {
 
@@ -44,26 +42,21 @@ public class ForgotAct extends AppCompatActivity {
         edtGmail = findViewById(R.id.gmail_forgot);
 
         findViewById(R.id.btn_accept).setOnClickListener(v->{
-            String gmail = edtGmail.getEditText().getText().toString();
+            String gmail = Objects.requireNonNull(edtGmail.getEditText()).getText().toString();
             if(!ValidationUser()) return;
             HideKeyboard(ForgotAct.this);
-            auth.sendPasswordResetEmail(gmail).addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-                    if(task.isSuccessful()){
-                        Toast.makeText(ForgotAct.this, "Vui lòng kiẻme tra email", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(ForgotAct.this, LoginAct.class));
-                        finish();
-                    }else{
-                        Toast.makeText(ForgotAct.this, "Thất bại", Toast.LENGTH_SHORT).show();
-                    }
+            auth.sendPasswordResetEmail(gmail).addOnCompleteListener(task -> {
+                if(task.isSuccessful()){
+                    Toast.makeText(ForgotAct.this, "Vui lòng kiẻme tra email", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(ForgotAct.this, LoginAct.class));
+                    finish();
+                }else{
+                    Toast.makeText(ForgotAct.this, "Thất bại", Toast.LENGTH_SHORT).show();
                 }
             });
         });
 
-        findViewById(R.id.btn_back_login).setOnClickListener(v->{
-            finish();
-        });
+        findViewById(R.id.btn_back_login).setOnClickListener(v-> finish());
     }
 
     /**
@@ -72,7 +65,7 @@ public class ForgotAct extends AppCompatActivity {
      * @return true or false
      */
     private boolean ValidationUser() {
-        String val = edtGmail.getEditText().getText().toString();
+        String val = Objects.requireNonNull(edtGmail.getEditText()).getText().toString();
         String space = "\\A\\w{4,20}\\z";
 
         if (val.isEmpty()) {

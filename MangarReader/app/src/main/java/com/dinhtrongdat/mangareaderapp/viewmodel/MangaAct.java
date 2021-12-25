@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -18,7 +17,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -32,8 +30,6 @@ import com.dinhtrongdat.mangareaderapp.adapter.MangaAdapter;
 import com.dinhtrongdat.mangareaderapp.model.BannerManga;
 import com.dinhtrongdat.mangareaderapp.model.Manga;
 import com.dinhtrongdat.mangareaderapp.model.User;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -44,10 +40,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -67,7 +63,6 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
      */
     ViewPager viewPager;
     RecyclerView rcvItem;
-    AppBarLayout appBar;
     TabLayout tabIndicater;
     SearchView searchView;
     NavigationView navigationView;
@@ -124,12 +119,12 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
         storage = FirebaseStorage.getInstance();
 
         // Fetch data user in firebase
-        database.getReference().child("Users").child(auth.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+        database.getReference().child("Users").child(Objects.requireNonNull(auth.getUid())).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){
                     User user = snapshot.getValue(User.class);
-                    Glide.with(MangaAct.this).load(user.getAvatar()).into(imgUser);
+                    Glide.with(MangaAct.this).load(Objects.requireNonNull(user).getAvatar()).into(imgUser);
                     txtFullName.setText(user.getName());
                     txtEmail.setText(user.getUserName());
                 }
@@ -148,55 +143,75 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
             startActivityForResult(intent,11);
         });
 
-        findViewById(R.id.img_menu).setOnClickListener(v -> {
-            ShowNavigationBar();
-        });
+        findViewById(R.id.img_menu).setOnClickListener(v -> ShowNavigationBar());
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(data.getData()!=null){
+        if(Objects.requireNonNull(data).getData()!=null){
             Uri uri = data.getData();
             imgUser.setImageURI(uri);
 
-            final StorageReference reference = storage.getReference().child("avatar_user").child(auth.getUid());
-            reference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    Toast.makeText(MangaAct.this, "Đã cập nhật ảnh đại diện", Toast.LENGTH_SHORT).show();
-                    reference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                        @Override
-                        public void onSuccess(Uri uri) {
-                            database.getReference().child("Users").child(auth.getUid()).child("avatar").setValue(uri.toString());
-                        }
-                    });
-                }
+            final StorageReference reference = storage.getReference().child("avatar_user").child(Objects.requireNonNull(auth.getUid()));
+            reference.putFile(uri).addOnSuccessListener(taskSnapshot -> {
+                Toast.makeText(MangaAct.this, "Đã cập nhật ảnh đại diện", Toast.LENGTH_SHORT).show();
+                reference.getDownloadUrl().addOnSuccessListener(uri1 -> database.getReference().child("Users").child(auth.getUid()).child("avatar").setValue(uri1.toString()));
             });
         }
     }
 
+    /**
+     * Phương thức tìm kiếm
+     */
     private void Search() {
-        Animation rightAnim = AnimationUtils.loadAnimation(this, R.anim.right_anim);
         searchView = findViewById(R.id.edtSearch);
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-        searchView.setAnimation(rightAnim);
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 mangaAdapter.getFilter().filter(query);
+                getFilterManga(query);
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
                 mangaAdapter.getFilter().filter(newText);
+                getFilterManga(newText);
                 return false;
             }
         });
+    }
 
+    /**
+     * Hàm lấy truyện theo filter tìm kiếm
+     * @param query tên truyện muốn tìm
+     */
+    private void getFilterManga(String query) {
+        databaseReference = FirebaseDatabase.getInstance().getReference("Comic");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(Mangas.size()!=0)
+                    Mangas.clear();
+                for (DataSnapshot data : snapshot.getChildren()) {
+                    Manga manga = data.getValue(Manga.class);
+                    if(manga.getName().toLowerCase().contains(query)){
+                        String[] category = Objects.requireNonNull(manga).getCategory().split("/");
+                        Mangas.add(manga);
+                    }
+                }
+                //setMangaAdapter(Mangas);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     @Override
@@ -221,9 +236,11 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(Mangas.size()!=0)
+                    Mangas.clear();
                 for (DataSnapshot data : snapshot.getChildren()) {
                     Manga manga = data.getValue(Manga.class);
-                    String[] category = manga.getCategory().split("/");
+                    String[] category = Objects.requireNonNull(manga).getCategory().split("/");
                     Mangas.add(manga);
                 }
                 setMangaAdapter(Mangas);
@@ -237,6 +254,10 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
         });
     }
 
+    /**
+     * set manga adapter
+     * @param mangas manga
+     */
     private void setMangaAdapter(List<Manga> mangas) {
         rcvItem = findViewById(R.id.rcv_item);
         mangaAdapter = new MangaAdapter(MangaAct.this, mangas, this);
@@ -256,9 +277,11 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(Banners.size()!=0)
+                    Banners.clear();
                 for (DataSnapshot data : snapshot.getChildren()) {
                     BannerManga bannerManga = data.getValue(BannerManga.class);
-                    String[] category = bannerManga.getCategory().split("/");
+                    String[] category = Objects.requireNonNull(bannerManga).getCategory().split("/");
                     Banners.add(bannerManga);
                 }
                 setBannerAdapter(Banners);
@@ -271,6 +294,11 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
         });
     }
 
+    /**
+     *
+     * set banner manga adapter
+     * @param banners banner
+     */
     private void setBannerAdapter(List<BannerManga> banners) {
         viewPager = findViewById(R.id.banner_view_pagger);
         tabIndicater = findViewById(R.id.tab_indicator);
@@ -288,7 +316,7 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
     /**
      * Sự kiện click chọn manga
      *
-     * @param clickedItemIndex
+     * @param clickedItemIndex index of manga
      */
     @Override
     public void onMangaItemClick(int clickedItemIndex) {
@@ -301,8 +329,8 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
      * SỰ kiện click chọn item trong navbar
      * Favorite: Xuất danh sách truyện ưa thích
      * Logout: Đăng xuất khỏi ứng dụng
-     * @param item
-     * @return
+     * @param item item on menu navigation
+     * @return item
      */
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {

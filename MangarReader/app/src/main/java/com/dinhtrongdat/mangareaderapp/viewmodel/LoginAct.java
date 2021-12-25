@@ -1,6 +1,5 @@
 package com.dinhtrongdat.mangareaderapp.viewmodel;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -24,12 +23,11 @@ import android.widget.Toast;
 import com.dinhtrongdat.mangareaderapp.R;
 import com.github.ybq.android.spinkit.sprite.Sprite;
 import com.github.ybq.android.spinkit.style.Wave;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import java.util.Objects;
 
 public class LoginAct extends AppCompatActivity implements View.OnClickListener {
 
@@ -93,31 +91,28 @@ public class LoginAct extends AppCompatActivity implements View.OnClickListener 
         HideKeyboard(LoginAct.this);
         progressBar.setVisibility(View.VISIBLE);
 
-        String strEmail = edtUser.getEditText().getText().toString().trim();
-        String strPass = edtPass.getEditText().getText().toString().trim();
+        String strEmail = Objects.requireNonNull(edtUser.getEditText()).getText().toString().trim();
+        String strPass = Objects.requireNonNull(edtPass.getEditText()).getText().toString().trim();
 
         FirebaseAuth auth = FirebaseAuth.getInstance();
-        auth.signInWithEmailAndPassword(strEmail, strPass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    Pair[] pair = new Pair[3];
-                    pair[0] = new Pair<View, String>(imgLogo, "logo_trans");
-                    pair[1] = new Pair<View, String>(txtDes, "text_trans");
-                    pair[2] = new Pair<View, String>(txtTitle, "text_trans");
+        auth.signInWithEmailAndPassword(strEmail, strPass).addOnCompleteListener(this, task -> {
+            if (task.isSuccessful()) {
+                Pair[] pair = new Pair[3];
+                pair[0] = new Pair<View, String>(imgLogo, "logo_trans");
+                pair[1] = new Pair<View, String>(txtDes, "text_trans");
+                pair[2] = new Pair<View, String>(txtTitle, "text_trans");
 
-                    Toast.makeText(LoginAct.this, "Login Success", Toast.LENGTH_SHORT).show();
-                    FirebaseUser user = auth.getCurrentUser();
+                Toast.makeText(LoginAct.this, "Login Success", Toast.LENGTH_SHORT).show();
+                FirebaseUser user = auth.getCurrentUser();
 
-                    Intent intent = new Intent(LoginAct.this, MangaAct.class);
-                    ActivityOptions option = ActivityOptions.makeSceneTransitionAnimation(LoginAct.this, pair);
-                    startActivity(intent, option.toBundle());
-                    finishAffinity();
-                    progressBar.setVisibility(View.GONE);
-                } else {
-                    Toast.makeText(LoginAct.this, "Fail", Toast.LENGTH_SHORT).show();
-                    progressBar.setVisibility(View.GONE);
-                }
+                Intent intent = new Intent(LoginAct.this, MangaAct.class);
+                ActivityOptions option = ActivityOptions.makeSceneTransitionAnimation(LoginAct.this, pair);
+                startActivity(intent, option.toBundle());
+                finishAffinity();
+                progressBar.setVisibility(View.GONE);
+            } else {
+                Toast.makeText(LoginAct.this, "Fail", Toast.LENGTH_SHORT).show();
+                progressBar.setVisibility(View.GONE);
             }
         });
     }

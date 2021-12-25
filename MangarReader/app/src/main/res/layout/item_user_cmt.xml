@@ -21,9 +21,9 @@
         android:layout_marginStart="65dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/poppins"
-        android:text="Name User"
+        android:text="Người dùng"
         android:textColor="@color/black"
-        android:textSize="12dp"
+        android:textSize="12sp"
         android:textStyle="bold" />
 
     <RatingBar
@@ -46,7 +46,8 @@
             android:id="@+id/tv_cmt"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="@string/nhanxet"/>
+            android:hint="@string/nhanxet"
+            android:textSize="15sp"/>
 
     </androidx.cardview.widget.CardView>
     <View
