@@ -7,13 +7,13 @@ import java.util.List;
  * Lớp Manga định nghĩa các truyện manga
  */
 public class Manga implements Serializable {
-    private String Name, Image, Category, Description, Author, Backdrop;
+    private String Name, Image, Category, Description, Author, Backdrop, Rate;
     List<Chapter> Chapters;
 
     public Manga() {
     }
 
-    public Manga(String name, String image, String category, String description, String author, String backdrop, List<Chapter> chapters) {
+    public Manga(String name, String image, String category, String description, String author, String backdrop, List<Chapter> chapters, String rate) {
         Name = name;
         Image = image;
         Category = category;
@@ -21,6 +21,7 @@ public class Manga implements Serializable {
         Chapters = chapters;
         Author = author;
         Backdrop = backdrop;
+        Rate = rate;
     }
 
     public String getName() {
@@ -78,4 +79,8 @@ public class Manga implements Serializable {
     public void setBackdrop(String backdrop) {
         Backdrop = backdrop;
     }
+
+    public String getRate() { return  Rate;}
+
+    public void setRate(String rate) { Rate = rate;}
 }

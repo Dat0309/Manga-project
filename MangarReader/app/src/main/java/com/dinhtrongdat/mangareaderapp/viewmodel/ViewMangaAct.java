@@ -35,7 +35,9 @@ public class ViewMangaAct extends AppCompatActivity implements View.OnClickListe
         btnBack = findViewById(R.id.chapter_back);
         txtChapterName.setText(chapter.getName());
         seekBar = findViewById(R.id.SeekbarManga);
+
         fetchhLinks(chapter);
+
 
         btnBack.setOnClickListener(this);
     }
@@ -43,7 +45,7 @@ public class ViewMangaAct extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case  R.id.chapter_back:
+            case R.id.chapter_back:
                 Toast.makeText(this, "BACK", Toast.LENGTH_SHORT).show();
                 finish();
                 break;
@@ -57,9 +59,7 @@ public class ViewMangaAct extends AppCompatActivity implements View.OnClickListe
                 BookFlipPageTransformer bookFlipPageTransformer = new BookFlipPageTransformer();
                 bookFlipPageTransformer.setScaleAmountPercent(10f);
                 viewPager.setPageTransformer(true, bookFlipPageTransformer);
-                //seekBar.setMax(chap.getLinks().size());
-                seekBar.setProgress(seekBar.getProgress() + 1);
-
+                
             }
         }
     }

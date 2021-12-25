@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
@@ -52,14 +51,11 @@ public class BannerAdapter extends PagerAdapter {
         Glide.with(context).load(Banners.get(position).getBackdrop()).into(imgBanner);
         container.addView(view);
 
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, MangaDetailsAct.class);
-                intent.putExtra("banner", Banners.get(position));
-                context.startActivity(intent);
+        view.setOnClickListener(v -> {
+            Intent intent = new Intent(context, MangaDetailsAct.class);
+            intent.putExtra("banner", Banners.get(position));
+            context.startActivity(intent);
 
-            }
         });
 
         return view;
