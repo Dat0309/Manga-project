@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.util.Pair;
 import android.view.View;
 import android.view.WindowManager;
@@ -13,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.dinhtrongdat.mangareaderapp.R;
-import com.dinhtrongdat.mangareaderapp.SplashScreen;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -44,12 +42,7 @@ public class GoogleLoginAct extends AppCompatActivity {
 
         createRequest();
 
-        findViewById(R.id.btn_gg_signin).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SignIn();
-            }
-        });
+        findViewById(R.id.btn_gg_signin).setOnClickListener(v -> SignIn());
     }
 
     @Override
@@ -115,7 +108,7 @@ public class GoogleLoginAct extends AppCompatActivity {
 
     /**
      * Hàm định nghĩa xử lý quá trình gửi yêu cầu đưng nhập bằng google
-     * @param idToken
+     * @param idToken token gg
      */
     private void firebaseAuthWithGoogle(String idToken) {
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);

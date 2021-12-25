@@ -2,6 +2,7 @@ package com.dinhtrongdat.mangareaderapp.viewmodel;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,7 +11,6 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -26,7 +26,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.dinhtrongdat.mangareaderapp.R;
 import com.dinhtrongdat.mangareaderapp.adapter.ChapterAdapter;
-import com.dinhtrongdat.mangareaderapp.adapter.MangaAdapter;
+import com.dinhtrongdat.mangareaderapp.adapter.CommentAdapter;
 import com.dinhtrongdat.mangareaderapp.adapter.TagAdapter;
 import com.dinhtrongdat.mangareaderapp.model.BannerManga;
 import com.dinhtrongdat.mangareaderapp.model.Chapter;
@@ -34,8 +34,6 @@ import com.dinhtrongdat.mangareaderapp.model.FavoriteManga;
 import com.dinhtrongdat.mangareaderapp.model.Manga;
 import com.dinhtrongdat.mangareaderapp.model.Rating;
 import com.dinhtrongdat.mangareaderapp.model.Tag;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -47,6 +45,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class MangaDetailsAct extends AppCompatActivity implements ChapterAdapter.OnItemChapterClick {
 
@@ -69,11 +68,14 @@ public class MangaDetailsAct extends AppCompatActivity implements ChapterAdapter
     TextView tvNameManga, tvAuthor, tvDescription, tvNumRate;
     RecyclerView rcvChapter, rcvTag;
     EditText rateCmt;
+    CardView viewCmt;
 
     /**
      * Adapter
      */
     ChapterAdapter chapterAdapter;
+    CommentAdapter commentAdapter;
+    List<Rating> listRating;
     List<Chapter> listChapter;
     TagAdapter tagAdapter;
     List<Tag> listTag;
@@ -110,54 +112,38 @@ public class MangaDetailsAct extends AppCompatActivity implements ChapterAdapter
         rcvChapter = findViewById(R.id.rcv_chapter);
         rcvTag = findViewById(R.id.rcv_tag);
         btnRate = findViewById(R.id.btn_rate);
+        viewCmt = findViewById(R.id.view_cmt);
 
         CheckFav();
 
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
-        btnReadManga.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MangaDetailsAct.this, ViewMangaAct.class);
-                intent.putExtra("chapter", listChapter.get(0));
-                startActivity(intent);
-            }
+        btnBack.setOnClickListener(view -> finish());
+        btnReadManga.setOnClickListener(view -> {
+            Intent intent = new Intent(MangaDetailsAct.this, ViewMangaAct.class);
+            intent.putExtra("chapter", listChapter.get(0));
+            startActivity(intent);
         });
         LoadDetails();
 
-        btnFavorite.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!IS_ADD)
-                    AddToFavorite(user);
-                else
-                    Toast.makeText(MangaDetailsAct.this, "Truyện đã tồn tại trong mục ưa thích", Toast.LENGTH_LONG).show();
-            }
+        btnFavorite.setOnClickListener(v -> {
+            if (!IS_ADD)
+                AddToFavorite(user);
+            else
+                Toast.makeText(MangaDetailsAct.this, "Truyện đã tồn tại trong mục ưa thích", Toast.LENGTH_LONG).show();
         });
 
-        btnShare.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_SEND);
-                intent.putExtra(Intent.EXTRA_TEXT, manga.getName());
-                intent.putExtra(Intent.EXTRA_SUBJECT, manga.getName());
-                intent.setType("text/plain");
+        btnShare.setOnClickListener(view -> {
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.putExtra(Intent.EXTRA_TEXT, manga.getName());
+            intent.putExtra(Intent.EXTRA_SUBJECT, manga.getName());
+            intent.setType("text/plain");
 
-                Intent shareIntent = Intent.createChooser(intent, null);
-                startActivity(shareIntent);
-            }
+            Intent shareIntent = Intent.createChooser(intent, null);
+            startActivity(shareIntent);
         });
 
-        btnRate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                OpenDiaLogRateManga(Gravity.BOTTOM);
-            }
-        });
+        btnRate.setOnClickListener(view -> OpenDiaLogRateManga());
+
+        viewCmt.setOnClickListener(view -> OpenDiaLogViewCmt());
     }
 
     /**
@@ -173,6 +159,7 @@ public class MangaDetailsAct extends AppCompatActivity implements ChapterAdapter
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot postSnapshot : snapshot.getChildren()){
                     Rating item = postSnapshot.getValue(Rating.class);
+                    assert item != null;
                     sum+= Float.parseFloat(item.getRateValue());
                     count++;
                 }
@@ -188,11 +175,71 @@ public class MangaDetailsAct extends AppCompatActivity implements ChapterAdapter
             }
         });
     }
+    /**
+     * Hiện bình luận
+     */
+    private void OpenDiaLogViewCmt(){
+        // hiện thị dialog + set vị trí, size của dialog
+        final Dialog dialog = new Dialog(MangaDetailsAct.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.view_rate_manga);
+        Window window = dialog.getWindow();
+
+        if (window == null) {
+            return;
+        }
+
+        window.setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                WindowManager.LayoutParams.WRAP_CONTENT);
+        window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        WindowManager.LayoutParams windowA = window.getAttributes();
+        windowA.gravity = Gravity.BOTTOM;
+        window.setAttributes(windowA);
+
+        View btnBack = (View) dialog.findViewById(R.id.btn_back_rate);
+        btnBack.setOnClickListener(view -> dialog.dismiss());
+
+        if(manga != null)
+            GetCmtRate(manga.getName());
+        else if(bannerManga != null)
+            GetCmtRate(bannerManga.getName());
+        else if(favorite != null)
+            GetCmtRate(favorite.getName());
+
+        RecyclerView rcvCmt = dialog.findViewById(R.id.rcv_cmt);
+        commentAdapter = new CommentAdapter(dialog.getContext(), listRating);
+        commentAdapter.notifyDataSetChanged();
+        rcvCmt.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
+        rcvCmt.setAdapter(commentAdapter);
+
+        dialog.show();
+
+    }
+
+    private void GetCmtRate(String name) {
+        listRating = new ArrayList<>();
+        reference = FirebaseDatabase.getInstance().getReference("rating");
+        Query mangaRating = reference.orderByChild("mangaName").equalTo(name);
+        mangaRating.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot postSnapshot : snapshot.getChildren()){
+                    Rating item = postSnapshot.getValue(Rating.class);
+                    listRating.add(item);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
 
     /**
      * Hiện rate_manga (Chỗ này vừa hiện ra dialog vừa lấy số lượng)
      */
-    private void OpenDiaLogRateManga(int gravity) {
+    private void OpenDiaLogRateManga() {
         // hiện thị dialog + set vị trí, size của dialog
         final Dialog dialog = new Dialog(MangaDetailsAct.this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -207,27 +254,19 @@ public class MangaDetailsAct extends AppCompatActivity implements ChapterAdapter
                 WindowManager.LayoutParams.WRAP_CONTENT);
         window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         WindowManager.LayoutParams windowA = window.getAttributes();
-        windowA.gravity = gravity;
+        windowA.gravity = Gravity.BOTTOM;
         window.setAttributes(windowA);
 
         View btnBack = (View) dialog.findViewById(R.id.btn_back_rate);
         rateCmt = (EditText) dialog.findViewById(R.id.edt_cmt);
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog.dismiss();
-            }
-        });
+        btnBack.setOnClickListener(view -> dialog.dismiss());
 
         // Lấy số lượng và gửi đi
         RatingBar ratingStar = (RatingBar) dialog.findViewById(R.id.ratingStar);
 
 
-        ratingStar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-            @Override
-            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
-                rating = ratingBar.getRating(); // Lấy số lượng
-            }
+        ratingStar.setOnRatingBarChangeListener((ratingBar, v, b) -> {
+            rating = ratingBar.getRating(); // Lấy số lượng
         });
 
         View btnSend = (View) dialog.findViewById(R.id.btn_send);
@@ -248,15 +287,14 @@ public class MangaDetailsAct extends AppCompatActivity implements ChapterAdapter
 
     }
 
+
+
     /**
      * Lấy số lượng Star
      */
     private void addRateManga() {
         reference = FirebaseDatabase.getInstance().getReference("rating");
-        reference.push().setValue(_rate).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-            }
+        reference.push().setValue(_rate).addOnCompleteListener(task -> {
         });
     }
 
@@ -267,9 +305,9 @@ public class MangaDetailsAct extends AppCompatActivity implements ChapterAdapter
         if (manga != null) {
             Glide.with(this).load(manga.getImage()).into(ivPosterManga);
             Glide.with(this).load(manga.getBackdrop()).into(ivBannerManga);
-            tvNameManga.setText(manga.getName().toString());
-            tvAuthor.setText(manga.getAuthor().toString());
-            tvDescription.setText(manga.getDescription().toString());
+            tvNameManga.setText(manga.getName());
+            tvAuthor.setText(manga.getAuthor());
+            tvDescription.setText(manga.getDescription());
             listChapter = manga.getChapters();
 
             chapterAdapter = new ChapterAdapter(this, listChapter, this);
@@ -291,12 +329,14 @@ public class MangaDetailsAct extends AppCompatActivity implements ChapterAdapter
             // Lấy lượt rate
             GetRatingManga(manga.getName());
 
+
+
         } else if (bannerManga != null) {
             Glide.with(this).load(bannerManga.getImage()).into(ivPosterManga);
             Glide.with(this).load(bannerManga.getBackdrop()).into(ivBannerManga);
-            tvNameManga.setText(bannerManga.getName().toString());
-            tvAuthor.setText(bannerManga.getAuthor().toString());
-            tvDescription.setText(bannerManga.getDescription().toString());
+            tvNameManga.setText(bannerManga.getName());
+            tvAuthor.setText(bannerManga.getAuthor());
+            tvDescription.setText(bannerManga.getDescription());
             listChapter = bannerManga.getChapters();
 
             chapterAdapter = new ChapterAdapter(this, listChapter, this);
@@ -319,9 +359,9 @@ public class MangaDetailsAct extends AppCompatActivity implements ChapterAdapter
         } else if (favorite != null) {
             Glide.with(this).load(favorite.getImage()).into(ivPosterManga);
             Glide.with(this).load(favorite.getBackdrop()).into(ivBannerManga);
-            tvNameManga.setText(favorite.getName().toString());
-            tvAuthor.setText(favorite.getAuthor().toString());
-            tvDescription.setText(favorite.getDescription().toString());
+            tvNameManga.setText(favorite.getName());
+            tvAuthor.setText(favorite.getAuthor());
+            tvDescription.setText(favorite.getDescription());
             listChapter = favorite.getChapters();
 
             chapterAdapter = new ChapterAdapter(this, listChapter, this);
@@ -360,7 +400,7 @@ public class MangaDetailsAct extends AppCompatActivity implements ChapterAdapter
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot data : snapshot.getChildren()) {
                     FavoriteManga favorite = data.getValue(FavoriteManga.class);
-                    if (favorite.getUid().compareTo(fav.getUid()) == 0) {
+                    if (Objects.requireNonNull(favorite).getUid().compareTo(fav.getUid()) == 0) {
                         if (String.valueOf(favorite.getName()).compareTo(String.valueOf(fav.getName())) == 0) {
                             IS_ADD = true;
                             btnFavorite.setImageResource(R.drawable.ic_favorite_red);
@@ -390,18 +430,15 @@ public class MangaDetailsAct extends AppCompatActivity implements ChapterAdapter
             fav = favorite;
 
         reference = FirebaseDatabase.getInstance().getReference("favorite");
-        reference.push().setValue(fav).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful()) {
-                    Toast.makeText(MangaDetailsAct.this, "Đã thêm vào mục yêu thích", Toast.LENGTH_SHORT).show();
-                    IS_ADD = true;
-                    btnFavorite.setImageResource(R.drawable.ic_favorite_red);
-                } else {
-                    Toast.makeText(MangaDetailsAct.this, "Thất bại", Toast.LENGTH_SHORT).show();
-                    IS_ADD = false;
-                    btnFavorite.setImageResource(R.drawable.ic_favorite);
-                }
+        reference.push().setValue(fav).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                Toast.makeText(MangaDetailsAct.this, "Đã thêm vào mục yêu thích", Toast.LENGTH_SHORT).show();
+                IS_ADD = true;
+                btnFavorite.setImageResource(R.drawable.ic_favorite_red);
+            } else {
+                Toast.makeText(MangaDetailsAct.this, "Thất bại", Toast.LENGTH_SHORT).show();
+                IS_ADD = false;
+                btnFavorite.setImageResource(R.drawable.ic_favorite);
             }
         });
     }

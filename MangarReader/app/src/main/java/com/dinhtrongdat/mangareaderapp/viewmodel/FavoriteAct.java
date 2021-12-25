@@ -128,9 +128,12 @@ public class FavoriteAct extends AppCompatActivity implements FavoriteAdapter.Li
      */
     private void RemoveFavorite(FirebaseUser user, FavoriteManga item) {
         FavoriteManga curFav;
-
         curFav = new FavoriteManga(item.getName(), item.getImage(), item.getCategory(), item.getDescription(), item.getAuthor(), item.getBackdrop(), item.getUid(),item.getChapters());
         reference = FirebaseDatabase.getInstance().getReference("favorite");
+
+        Snackbar snackbar = Snackbar.make(linear, "Đã xoá truyện khỏi danh sách ưa thích",Snackbar.LENGTH_SHORT);
+        snackbar.setActionTextColor(Color.RED);
+
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -140,12 +143,6 @@ public class FavoriteAct extends AppCompatActivity implements FavoriteAdapter.Li
                         if(fav.getName().compareTo(curFav.getName()) == 0){
                             reference.child(Objects.requireNonNull(data.getKey())).removeValue().addOnCompleteListener(task -> {
                                 if(task.isSuccessful()){
-                                    Snackbar snackbar = Snackbar.make(linear, "Đã xoá truyện khỏi danh sách ưa thích",Snackbar.LENGTH_SHORT);
-                                    snackbar.setAction("UNDO", v -> {
-                                        reference.push().setValue(item);
-                                        adapter.notifyDataSetChanged();
-                                    });
-                                    snackbar.setActionTextColor(Color.RED);
                                     snackbar.show();
                                 }
                             });

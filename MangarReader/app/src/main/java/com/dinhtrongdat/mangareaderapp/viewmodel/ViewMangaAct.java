@@ -45,7 +45,7 @@ public class ViewMangaAct extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case  R.id.chapter_back:
+            case R.id.chapter_back:
                 Toast.makeText(this, "BACK", Toast.LENGTH_SHORT).show();
                 finish();
                 break;

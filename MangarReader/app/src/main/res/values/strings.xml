@@ -30,4 +30,5 @@
     <string name="back_to_login">Quay lại đăng nhập</string>
     <string name="send">Xác nhận</string>
     <string name="nhanxet">Nhận xét</string>
+    <string name="cmt">Bình luận</string>
 </resources>

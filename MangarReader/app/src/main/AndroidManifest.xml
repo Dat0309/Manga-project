@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MangaReaderApp">
-        <activity android:name=".viewmodel.ForgotAct"></activity>
+        <activity android:name=".viewmodel.CategoryAct"></activity>
+        <activity android:name=".viewmodel.ForgotAct" />
         <activity
             android:name=".viewmodel.ViewMangaAct"
             android:exported="true" />
