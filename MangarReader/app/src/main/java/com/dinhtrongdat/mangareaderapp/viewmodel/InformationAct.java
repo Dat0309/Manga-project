@@ -35,7 +35,7 @@ public class InformationAct extends AppCompatActivity {
     ImageView ivAvatar;
     TextView txtGmail;
     EditText txtFullName;
-    TextView txtPass;
+
     Button btnClick;
 
     String name;
@@ -56,7 +56,7 @@ public class InformationAct extends AppCompatActivity {
         ivAvatar = findViewById(R.id.iv_avt_info);
         txtGmail = findViewById(R.id.txtGmail);
         txtFullName = findViewById(R.id.txtFullName);
-        txtPass = findViewById(R.id.txtPass);
+
         btnClick = findViewById(R.id.btnClick);
 
 
@@ -78,7 +78,7 @@ public class InformationAct extends AppCompatActivity {
                     Glide.with(InformationAct.this).load(user.getAvatar()).into(ivAvatar);
                     txtFullName.setText(user.getName());
                     txtGmail.setText(user.getUserName());
-                    txtPass.setText(user.getPassWord());
+
 
 
 

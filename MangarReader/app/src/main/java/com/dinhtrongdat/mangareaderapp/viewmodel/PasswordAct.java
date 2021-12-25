@@ -22,7 +22,11 @@ public class PasswordAct extends AppCompatActivity {
     ImageView ivBack;
     EditText oldPass;
     EditText newPass;
+    EditText newPass2;
     Button btnClick;
+    String oldPasstxt;
+    String newPasstxt;
+    String newPass2txt;
     String pass;
 
     @Override
@@ -30,8 +34,9 @@ public class PasswordAct extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_password);
         ivBack = findViewById(R.id.imgBack);
-
+        oldPass = findViewById(R.id.txtOldPass);
         newPass = findViewById(R.id.txtNewPass);
+        newPass2 = findViewById(R.id.txtNewPass2);
         btnClick = findViewById(R.id.btnChangePass);
         ivBack.setOnClickListener(v -> finish());
         FirebaseAuth auth;
@@ -60,8 +65,22 @@ public class PasswordAct extends AppCompatActivity {
 
                 public void onClick(View view){
 
-                          database.getReference().child("Users").child(auth.getUid()).child("passWord").setValue(newPass.getText().toString());
-                         Toast.makeText(PasswordAct.this, "Đã cập nhật mật khẩu", Toast.LENGTH_SHORT).show();
+                    oldPasstxt = oldPass.getText().toString();
+                    if(oldPasstxt.compareTo(pass) == 0){
+                        newPasstxt = newPass.getText().toString();
+                        newPass2txt = newPass2.getText().toString();
+                        if( newPasstxt.compareTo(newPass2txt) == 0){
+                            database.getReference().child("Users").child(auth.getUid()).child("passWord").setValue(newPass.getText().toString());
+                            Toast.makeText(PasswordAct.this, "Đã cập nhật mật khẩu", Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                            Toast.makeText(PasswordAct.this, "Xác nhận lại mật khẩu không đúng!", Toast.LENGTH_SHORT).show();
+
+                    }
+                    else
+                        Toast.makeText(PasswordAct.this, "Mật khẩu cũ không chính xác!", Toast.LENGTH_SHORT).show();
+
+
             }});
 
     }

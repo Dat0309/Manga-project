@@ -115,27 +115,7 @@
                 android:layout_height="wrap_content"
                 android:text="Kim Thị Chuối"/>
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
 
-                android:textSize="20dp"
-                android:padding="5dp"
-                android:layout_margin="10dp"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:text="Mật khẩu:"/>
-            <TextView
-                android:id="@+id/txtPass"
-                android:textSize="20dp"
-                android:padding="5dp"
-                android:layout_margin="10dp"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:text="KimThiChuoi123"/>
-        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"

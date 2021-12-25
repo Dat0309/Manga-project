@@ -256,7 +256,32 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
     /**
      * Lấy list truyện trên database
      */
-    private void UploadMangaItem() {
+    private void UploadMangaItem(){
+        android.app.AlertDialog alertDialog = new SpotsDialog.Builder().setContext(this)
+                .setCancelable(false)
+                .setMessage("Chờ xíu")
+                .build();
+        alertDialog.show();
+        Mangas = new ArrayList<>();
+        databaseReference = FirebaseDatabase.getInstance().getReference("Comic");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot data : snapshot.getChildren()) {
+                    Manga manga = data.getValue(Manga.class);
+                    String[] category = manga.getCategory().split("/");
+                    Mangas.add(manga);}
+                setMangaAdapter(Mangas);
+                alertDialog.dismiss();
+    }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+            private void UploadCategoryMangaItem() {
         android.app.AlertDialog alertDialog = new SpotsDialog.Builder().setContext(this)
                 .setCancelable(false)
                 .setMessage("Chờ xíu")
@@ -573,9 +598,10 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
             @Override
             public void onClick(View view) {
                 kq = MANGA_ACTION;
-                initUI();
-                drawerLayout.closeDrawer(GravityCompat.END);
-                dl.dismiss();
+//                initUI();
+//                drawerLayout.closeDrawer(GravityCompat.END);
+//                dl.dismiss();
+                  startActivity(new Intent(MangaAct.this, MangaCategoryAct.class));
             }
         });
 
