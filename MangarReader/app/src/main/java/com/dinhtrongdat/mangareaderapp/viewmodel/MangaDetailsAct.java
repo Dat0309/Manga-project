@@ -2,6 +2,7 @@ package com.dinhtrongdat.mangareaderapp.viewmodel;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,6 +20,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +28,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.dinhtrongdat.mangareaderapp.R;
 import com.dinhtrongdat.mangareaderapp.adapter.ChapterAdapter;
+import com.dinhtrongdat.mangareaderapp.adapter.CommentAdapter;
 import com.dinhtrongdat.mangareaderapp.adapter.MangaAdapter;
 import com.dinhtrongdat.mangareaderapp.adapter.TagAdapter;
 import com.dinhtrongdat.mangareaderapp.model.BannerManga;
@@ -48,6 +51,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class MangaDetailsAct extends AppCompatActivity implements ChapterAdapter.OnItemChapterClick {
 
     float rating = 0;
@@ -69,11 +74,14 @@ public class MangaDetailsAct extends AppCompatActivity implements ChapterAdapter
     TextView tvNameManga, tvAuthor, tvDescription, tvNumRate;
     RecyclerView rcvChapter, rcvTag;
     EditText rateCmt;
+    CardView viewCmt;
 
     /**
      * Adapter
      */
     ChapterAdapter chapterAdapter;
+    CommentAdapter commentAdapter;
+    List<Rating> listRating;
     List<Chapter> listChapter;
     TagAdapter tagAdapter;
     List<Tag> listTag;
@@ -110,6 +118,7 @@ public class MangaDetailsAct extends AppCompatActivity implements ChapterAdapter
         rcvChapter = findViewById(R.id.rcv_chapter);
         rcvTag = findViewById(R.id.rcv_tag);
         btnRate = findViewById(R.id.btn_rate);
+        viewCmt = findViewById(R.id.view_cmt);
 
         CheckFav();
 
@@ -158,6 +167,12 @@ public class MangaDetailsAct extends AppCompatActivity implements ChapterAdapter
                 OpenDiaLogRateManga(Gravity.BOTTOM);
             }
         });
+        viewCmt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                OpenDiaLogViewCmt(Gravity.BOTTOM);
+            }
+        });
     }
 
     /**
@@ -187,6 +202,39 @@ public class MangaDetailsAct extends AppCompatActivity implements ChapterAdapter
 
             }
         });
+    }
+    /**
+     * Hiện bình luận
+     */
+    private void OpenDiaLogViewCmt(int gravity){
+        // hiện thị dialog + set vị trí, size của dialog
+        final Dialog dialog = new Dialog(MangaDetailsAct.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.view_rate_manga);
+        Window window = dialog.getWindow();
+
+        if (window == null) {
+            return;
+        }
+
+        window.setLayout(WindowManager.LayoutParams.MATCH_PARENT,
+                WindowManager.LayoutParams.WRAP_CONTENT);
+        window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        WindowManager.LayoutParams windowA = window.getAttributes();
+        windowA.gravity = gravity;
+        window.setAttributes(windowA);
+
+        View btnBack = (View) dialog.findViewById(R.id.btn_back_rate);
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+        CircleImageView imgUser = (CircleImageView)dialog.findViewById(R.id.img_user_cmt);
+        TextView nameUser =(TextView) dialog.findViewById(R.id.txt_name_user);
+        dialog.show();
+
     }
 
     /**
@@ -248,6 +296,8 @@ public class MangaDetailsAct extends AppCompatActivity implements ChapterAdapter
 
     }
 
+
+
     /**
      * Lấy số lượng Star
      */
@@ -290,6 +340,8 @@ public class MangaDetailsAct extends AppCompatActivity implements ChapterAdapter
 
             // Lấy lượt rate
             GetRatingManga(manga.getName());
+
+
 
         } else if (bannerManga != null) {
             Glide.with(this).load(bannerManga.getImage()).into(ivPosterManga);

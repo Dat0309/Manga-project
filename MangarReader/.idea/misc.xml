@@ -31,10 +31,12 @@
         <entry key="..\:/Github/Manga-project/MangarReader/app/src/main/res/layout/item_fav.xml" value="0.20516304347826086" />
         <entry key="..\:/Github/Manga-project/MangarReader/app/src/main/res/layout/item_tag.xml" value="0.264" />
         <entry key="..\:/Github/Manga-project/MangarReader/app/src/main/res/layout/item_type.xml" value="0.4" />
+        <entry key="..\:/Github/Manga-project/MangarReader/app/src/main/res/layout/item_user_cmt.xml" value="0.23007246376811594" />
         <entry key="..\:/Github/Manga-project/MangarReader/app/src/main/res/layout/manga_details.xml" value="0.264" />
         <entry key="..\:/Github/Manga-project/MangarReader/app/src/main/res/layout/manga_item.xml" value="0.12360688956433637" />
         <entry key="..\:/Github/Manga-project/MangarReader/app/src/main/res/layout/rate_manga.xml" value="0.19293478260869565" />
         <entry key="..\:/Github/Manga-project/MangarReader/app/src/main/res/layout/view_pager_item.xml" value="0.14583333333333334" />
+        <entry key="..\:/Github/Manga-project/MangarReader/app/src/main/res/layout/view_rate_manga.xml" value="0.264" />
       </map>
     </option>
   </component>

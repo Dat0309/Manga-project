@@ -16,7 +16,7 @@
             android:id="@+id/img_user"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/avt"/>
+            android:src="@drawable/avt" />
         <ImageView
             android:id="@+id/img_upload"
             android:layout_width="24dp"
