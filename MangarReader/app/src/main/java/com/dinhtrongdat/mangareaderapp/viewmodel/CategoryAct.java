@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.dinhtrongdat.mangareaderapp.R;
@@ -39,6 +41,8 @@ public class CategoryAct extends AppCompatActivity implements CategoryAdapter.On
      */
     DatabaseReference reference;
 
+    ImageView ivBack;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +54,8 @@ public class CategoryAct extends AppCompatActivity implements CategoryAdapter.On
     private void initUI() {
         rcvCate = findViewById(R.id.rcv_category);
         Cates = new ArrayList<>();
+        ivBack = findViewById(R.id.imgBack);
+        ivBack.setOnClickListener(v -> finish());
         UpdateItem();
     }
 
@@ -83,6 +89,9 @@ public class CategoryAct extends AppCompatActivity implements CategoryAdapter.On
 
     @Override
     public void onCateItemClick(int clickedItemIndex) {
-        Toast.makeText(this, Cates.get(clickedItemIndex).getTag(), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, Cates.get(clickedItemIndex).getTag(), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(CategoryAct.this, categoryMangaDetailsAct.class);
+        intent.putExtra("category", Cates.get(clickedItemIndex));
+        startActivity(intent);
     }
 }

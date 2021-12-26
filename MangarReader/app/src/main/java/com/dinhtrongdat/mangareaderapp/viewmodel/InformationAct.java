@@ -60,7 +60,12 @@ public class InformationAct extends AppCompatActivity {
         btnClick = findViewById(R.id.btnClick);
 
 
-        ivBack.setOnClickListener(v -> finish());
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(InformationAct.this,MangaAct.class));
+            }
+        });
 
         FirebaseAuth auth;
         FirebaseDatabase database;
