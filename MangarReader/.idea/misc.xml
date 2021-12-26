@@ -37,6 +37,27 @@
         <entry key="..\:/Github/Manga-project/MangarReader/app/src/main/res/layout/rate_manga.xml" value="0.19293478260869565" />
         <entry key="..\:/Github/Manga-project/MangarReader/app/src/main/res/layout/view_pager_item.xml" value="0.14583333333333334" />
         <entry key="..\:/Github/Manga-project/MangarReader/app/src/main/res/layout/view_rate_manga.xml" value="0.264" />
+        <entry key="..\:/LapTrinhDiDong/Manga-project/MangarReader/app/src/main/res/drawable/bg_google_login.xml" value="0.14635416666666667" />
+        <entry key="..\:/LapTrinhDiDong/Manga-project/MangarReader/app/src/main/res/drawable/ic_favorite.xml" value="0.14635416666666667" />
+        <entry key="..\:/LapTrinhDiDong/Manga-project/MangarReader/app/src/main/res/drawable/ic_star.xml" value="0.14635416666666667" />
+        <entry key="..\:/LapTrinhDiDong/Manga-project/MangarReader/app/src/main/res/drawable/ic_tar.xml" value="0.14635416666666667" />
+        <entry key="..\:/LapTrinhDiDong/Manga-project/MangarReader/app/src/main/res/layout/activity_category.xml" value="0.25416666666666665" />
+        <entry key="..\:/LapTrinhDiDong/Manga-project/MangarReader/app/src/main/res/layout/activity_category_manga_details.xml" value="0.12444001991040318" />
+        <entry key="..\:/LapTrinhDiDong/Manga-project/MangarReader/app/src/main/res/layout/activity_information.xml" value="0.264" />
+        <entry key="..\:/LapTrinhDiDong/Manga-project/MangarReader/app/src/main/res/layout/activity_login.xml" value="0.2" />
+        <entry key="..\:/LapTrinhDiDong/Manga-project/MangarReader/app/src/main/res/layout/activity_manga.xml" value="0.25416666666666665" />
+        <entry key="..\:/LapTrinhDiDong/Manga-project/MangarReader/app/src/main/res/layout/activity_manga_category.xml" value="0.25416666666666665" />
+        <entry key="..\:/LapTrinhDiDong/Manga-project/MangarReader/app/src/main/res/layout/activity_manga_details.xml" value="0.13020833333333334" />
+        <entry key="..\:/LapTrinhDiDong/Manga-project/MangarReader/app/src/main/res/layout/activity_password.xml" value="0.264" />
+        <entry key="..\:/LapTrinhDiDong/Manga-project/MangarReader/app/src/main/res/layout/activity_view_manga.xml" value="0.13020833333333334" />
+        <entry key="..\:/LapTrinhDiDong/Manga-project/MangarReader/app/src/main/res/layout/dialog_category.xml" value="0.13020833333333334" />
+        <entry key="..\:/LapTrinhDiDong/Manga-project/MangarReader/app/src/main/res/layout/header_layout.xml" value="0.13020833333333334" />
+        <entry key="..\:/LapTrinhDiDong/Manga-project/MangarReader/app/src/main/res/layout/item_cate.xml" value="0.25416666666666665" />
+        <entry key="..\:/LapTrinhDiDong/Manga-project/MangarReader/app/src/main/res/layout/item_chapter.xml" value="0.25416666666666665" />
+        <entry key="..\:/LapTrinhDiDong/Manga-project/MangarReader/app/src/main/res/layout/item_fav.xml" value="0.25416666666666665" />
+        <entry key="..\:/LapTrinhDiDong/Manga-project/MangarReader/app/src/main/res/layout/item_tag.xml" value="0.25416666666666665" />
+        <entry key="..\:/LapTrinhDiDong/Manga-project/MangarReader/app/src/main/res/layout/item_user_cmt.xml" value="0.25416666666666665" />
+        <entry key="..\:/LapTrinhDiDong/Manga-project/MangarReader/app/src/main/res/layout/manga_item.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>
@@ -65,7 +86,7 @@
     </option>
     <option name="myNotNulls">
       <value>
-        <list size="13">
+        <list size="14">
           <item index="0" class="java.lang.String" itemvalue="org.jetbrains.annotations.NotNull" />
           <item index="1" class="java.lang.String" itemvalue="edu.umd.cs.findbugs.annotations.NonNull" />
           <item index="2" class="java.lang.String" itemvalue="android.support.annotation.NonNull" />
@@ -79,6 +100,7 @@
           <item index="10" class="java.lang.String" itemvalue="org.eclipse.jdt.annotation.NonNull" />
           <item index="11" class="java.lang.String" itemvalue="io.reactivex.annotations.NonNull" />
           <item index="12" class="java.lang.String" itemvalue="io.reactivex.rxjava3.annotations.NonNull" />
+          <item index="13" class="java.lang.String" itemvalue="lombok.NonNull" />
         </list>
       </value>
     </option>

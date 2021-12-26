@@ -19,4 +19,7 @@
     <color name="color_round2">#FFC478</color>
     <color name="color_selected_bottom_nav">#DC933F</color>
     <color name="bg_fav">#6988AB</color>
+    <color name="red_dark">#9A160C</color>
+    <color name="dark">#FFF8E6</color>
+    <color name="blue">#167BCC</color>
 </resources>
