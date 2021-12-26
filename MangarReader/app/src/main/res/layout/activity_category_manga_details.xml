@@ -30,13 +30,17 @@
                 android:src="@drawable/logo2" />
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_margin="15dp"
+        >
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rcv_category"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/item_cate"/>
+
+            tools:listitem="@layout/manga_item"/>
     </androidx.core.widget.NestedScrollView>
 </LinearLayout>

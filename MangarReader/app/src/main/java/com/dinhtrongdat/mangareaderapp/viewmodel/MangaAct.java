@@ -340,15 +340,26 @@ public class MangaAct extends AppCompatActivity implements MangaAdapter.OnItemMa
                 startActivity(new Intent(MangaAct.this, FavoriteAct.class));
                 drawerLayout.closeDrawer(GravityCompat.END);
                 break;
+            case R.id.nav_type:
+                startActivity(new Intent(MangaAct.this, CategoryAct.class));
+                drawerLayout.closeDrawer(GravityCompat.END);
+                break;
+            case R.id.nav_profile:
+                startActivity(new Intent(MangaAct.this, InformationAct.class));
+                drawerLayout.closeDrawer(GravityCompat.END);
+
+                break;
+            case R.id.nav_pass:
+                startActivity(new Intent(MangaAct.this,PasswordAct.class));
+                drawerLayout.closeDrawer(GravityCompat.END);
+
+                break;
             case R.id.nav_logout:
                 auth.signOut();
                 finish();
                 startActivity(new Intent(MangaAct.this, LoginAct.class));
                 break;
-            case R.id.nav_type:
-                startActivity(new Intent(MangaAct.this, CategoryAct.class));
-                drawerLayout.closeDrawer(GravityCompat.END);
-                break;
+
         }
         return true;
     }
