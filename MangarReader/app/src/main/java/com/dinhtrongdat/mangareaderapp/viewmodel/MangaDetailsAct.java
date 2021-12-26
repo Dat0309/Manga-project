@@ -115,6 +115,8 @@ public class MangaDetailsAct extends AppCompatActivity implements ChapterAdapter
         viewCmt = findViewById(R.id.view_cmt);
 
         CheckFav();
+        CheckRate();
+
 
         btnBack.setOnClickListener(view -> finish());
         btnReadManga.setOnClickListener(view -> {
@@ -410,6 +412,33 @@ public class MangaDetailsAct extends AppCompatActivity implements ChapterAdapter
                 }
             }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+    /**
+     * Hàm kiểm tra truyện đã được rate hay chưa
+     */
+    private void CheckRate(){
+        reference = FirebaseDatabase.getInstance().getReference("rating");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot data : snapshot.getChildren()){
+                    Rating rating = data.getValue(Rating.class);
+                    if(Objects.requireNonNull(rating).getUid().compareTo(rating.getUid()) == 0){
+                        if(String.valueOf(rating.getMangaName()).compareTo(String.valueOf(manga.getName())) == 0){
+                            if(rating.getUid().compareTo(user.getUid()) == 0){
+                                IS_ADD = true;
+                                btnRate.setImageResource(R.drawable.ic_star_check);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
