@@ -1,12 +1,12 @@
-### Manga-project
+### Manga Reader App
+
 Đề tài thu hoạch `nhóm 1` môn `Phát triển ứng dụng di động CTK43`
-## Demo (Manga reader application)
-![image](https://github.com/Dat0309/Manga-project/blob/main/picture/splash.png)
-![image](https://github.com/Dat0309/Manga-project/blob/main/picture/login.png)
-![image](https://github.com/Dat0309/Manga-project/blob/main/picture/home.png)
-![image](https://github.com/Dat0309/Manga-project/blob/main/picture/detail_manga.png)
-![image](https://github.com/Dat0309/Manga-project/blob/main/picture/view_manga.png)
-![image](https://github.com/Dat0309/Manga-project/blob/main/picture/favorite_view.png)
+
+![image](https://github.com/Dat0309/Manga-project/blob/main/picture/project%20overview.png)
+
+
+## Demo
+![image](https://github.com/Dat0309/Manga-project/blob/main/picture/overview.png)
 
 ## Installation
 build.gradle.app
@@ -49,6 +49,5 @@ https://github.com/Dat0309/Manga-project/blob/main/manga-ctk43-default-rtdb-expo
 ## Reference
 ```
 Đinh Trọng Đạt CTK43
-Nguyễn Anh Nhật Huy CTK47
-Lưu Nguyễn Vân Em CTK43
+Nguyễn Anh Nhật Huy CTK43
 ```
